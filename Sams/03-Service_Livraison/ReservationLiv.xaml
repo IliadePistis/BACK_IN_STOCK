@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="ReservationLiv" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="io_Sams" Type="InOutArgument(ui:UiElement)" />
@@ -9,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1254,3588</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1254,4042</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReservationLiv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,20 +101,20 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReservationLiv" sap:VirtualizedContainerService.HintSize="1264,3523.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReservationLiv" sap:VirtualizedContainerService.HintSize="1264,3977.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1202,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [ReservationLiv] ...&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="1202,2949.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="Never" ScopeGuid="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="1202,3403.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="Never" ScopeGuid="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1168,2652" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1168,3106" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="DefaultDate" />
               <Variable x:TypeArguments="x:String" Name="NoSupplyMessage" />
@@ -125,7 +124,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Errors (piipa,'" sap:VirtualizedContainerService.HintSize="1106,2442" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="20" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Errors (piipa,'" sap:VirtualizedContainerService.HintSize="1106,2896" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="20" Version="V1">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,762" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
@@ -158,13 +157,13 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="602,2180.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="602,2674.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_25">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Articles non'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="540,834" sap2010:WorkflowViewState.IdRef="NCheckState_10" Timeout="20" Version="V1">
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Articles non'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="540,794" sap2010:WorkflowViewState.IdRef="NCheckState_10" Timeout="20" Version="V1">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,572.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_32">
                         <sap:WorkflowViewStateService.ViewState>
@@ -228,7 +227,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="540,1096.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="540,1630.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_31">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="Etat_NOSUPPLY" />
                     </Sequence.Variables>
@@ -260,7 +259,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <If Condition="[Etat_NOSUPPLY.Contains(&quot;unavailable&quot;)]" sap:VirtualizedContainerService.HintSize="410,542" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[Etat_NOSUPPLY.Contains(&quot;unavailable&quot;)]" sap:VirtualizedContainerService.HintSize="410,1076" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -306,10 +305,18 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\02-Service_Livraison\ReservationServiceLiv.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\ReservationServiceLiv.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_AnDate">[in_AnDate]</InArgument>
-                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_select">[in_select]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessage">[in_noSupplyMessage]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_AnDate">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AnDate" />
+                              </InArgument>
+                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
+                                <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
+                              </InOutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_select">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_select" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessage">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_noSupplyMessage" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SaveOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\SaveOrder.xaml">
