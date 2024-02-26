@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,1588.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,1591.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01_Cas1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,7 +98,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_01_Cas1" sap:VirtualizedContainerService.HintSize="670,1524" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_01_Cas1" sap:VirtualizedContainerService.HintSize="670,1526.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -120,13 +120,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="608,859.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_sams]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_sams]" ScopeGuid="16e043e0-1a61-42da-8dc6-f853b43e4e77" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="608,862" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_sams]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_sams]" ScopeGuid="16e043e0-1a61-42da-8dc6-f853b43e4e77" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574,720" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574,722.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="cas" />
             </Sequence.Variables>
@@ -143,7 +143,7 @@
                 <InArgument x:TypeArguments="x:Int32">1</InArgument>
               </Assign.Value>
             </Assign>
-            <Sequence DisplayName="Annulation Total" sap:VirtualizedContainerService.HintSize="512,478.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Annulation Total" sap:VirtualizedContainerService.HintSize="512,481.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,9 +152,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\SaveOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\SaveOrder.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
-                    <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
-                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <Sequence DisplayName="POP UP INFO" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -220,7 +218,7 @@
                   <OutArgument x:TypeArguments="x:String">[out_OrderStatus]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">Happy Flow Total</InArgument>
+                  <InArgument x:TypeArguments="x:String">Happy Flow</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
