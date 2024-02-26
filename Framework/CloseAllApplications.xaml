@@ -1,0 +1,136 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1150,553.3333333333334" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="450,488.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Remote Desktop: SAMS" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="268b9a92-d899-496c-99f0-fbbf8574e823" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="57, 114, 203, 717" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPKSURBVFhH7VevayNBFO6fEVsZWVl7snCicRc4UcKpqCOcKKWmhIpSTpQQUUJFYCsCW1FIxMKuWUhEYCMCG3GwERUjKlZUjKh4930zu/nR2zt1m5oOPGZ25s173/vmmwnZk5NDkZMDa9/+v2nE1V/fGHN9qSLnoezpY3x4n0TCsuyo2IKG6ONqBiAgCCDalU0AYH4m+nMOoMipLGOx85YFsGJgtF/sXIZNaiKLNgC0NwAUOZZhAYzVE8Bsk4Ei5zJs1rDJ3wVAiOueJ985gE3q3wXAJvX/BMCHY9mxtjjbfh+o3ml9/f23OcbgXL6X42cfNra9iV0EYN4U015iOEZ2/AvOoyywVnYuQII8WZr5zbD37RwTc160yGuKuIkds8cV3AbAJNyofIlv98W/qsi4eyjxoCaqjzeClbK9KFGTtqQP2btBoK8a2CJJB5kfvtmSAAmeUDGSJ96Z+P0GrClx0JFk1BI92QKAzUiun2NxLw/E+VER57Qi7nlFoi7Wlg4AxhKHPUkVeoA0oAFAzVyTkGDlyRW9HJrvYf9MEq4BkD9oi3NZE+enNYJJA4DYBJB6eJ+1Rc9K01lH4v6BJGQA9CdhW3oXoB+N7JAFDQCRdy1R6BpgbNEjtIPm3LRkeIcfnOfs6DKmkqBdzIAChe5FRXxsUtOe3bBERaGlX81diUbXZhyNEOS+ahiLQ0c6F9YnWYzFRYVs7i0AdOvGOE6mYENDC7B0CpDbGkA1EBfpJvW97xWJJ6D7aSzpwoJJlzhnmH5BAJVINEB1aSIxAvdA79jroa9L5xxMovEIxoOWRA9NcW/qYA/UP9gC4sdmgQYoQpyhCiCUR9xbHAfPXOM42F+fHpngbtfeFr8PGp8tABdV+rdIAiBMZtbvoYE59ADVpwsX4rs2x0HwZEmNAGILAO9mftXQ0sVQhrc4jmUM4TSkAwBM4FzVDNWsRi18aKAHv7rECMhqE88CG96heh4ZCshbPs84CViQFQAPIoQGeP2og+FVFZXUDG2sundxZM6S1DEBdUI1m/NFxUY3ISjFufKOU2SsksDG942VFmg5S4pA1wCqRtXjG2jgvIorc2Qq5QYG57VhUPOAgCmFK8TAuZkzZfLsmVWhXScjuQbMNURMjjm3rQE+m7jXqQdqPFSJZKyUgajYlM4bCQgkn/9jDaazdc5r9ARsYsIY0/hzbQ0AP5V8OjeClG5bAKYQRJFTmbYGgCeVlBQ5lWkfAD4ArADg71H+wOzUkDP7awYAeBwMCDKxC2MuPkhkgH+ROSAa0+/Cslxycii/AZOsOfF0UZQJAAAAAElFTkSuQmCC" InformativeScreenshot="8c34811ff48de9df056eda9246855c29.png" Selector="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ToolbarUi' isremoteapp='1'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: Workspace" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="268b9a92-d899-496c-99f0-fbbf8574e823" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="152, 152, 1536, 150" IconBase64="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" InformativeScreenshot="98f77d45cb68595de58173d85f81a1a6.png" Selector="&lt;wnd app='interactionworkspace.exe' cls='HwndWrapper*' title='Workspace'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

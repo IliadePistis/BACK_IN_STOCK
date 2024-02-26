@@ -1,0 +1,238 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RefundOperation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_RefundAmount" Type="OutArgument(x:String)" />
+    <x:Property Name="in_TotalVSPartial" Type="InArgument(x:String)" />
+    <x:Property Name="out_Sams" Type="OutArgument(ui:UiElement)" />
+  </x:Members>
+  <this:RefundOperation.in_TotalVSPartial>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RefundOperation.in_TotalVSPartial>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,2270.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Total_Refund_Operations_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="546,2206" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [RefundOperations] ...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: SAMS" sap:VirtualizedContainerService.HintSize="484,1726" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[out_Sams]" ScopeGuid="77f98d6a-a675-464a-a755-66e4223a256e" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1428.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="Freight" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheck Action="Check" DisplayName="Check 'Cacher ligne orange'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="77f98d6a-a675-464a-a755-66e4223a256e" Version="V1">
+              <uix:NCheck.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="24, 883, 192, 30" ElementType="CheckBox" FriendlyName="'Cacher ligne orange'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='tloBottom' /&gt;&lt;wnd aaname='Cacher ligne orange' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='tloBottom' /&gt;&lt;wnd aaname='Cacher ligne orange' cls='WindowsForms10.BUTTON.*' check:fulltext='Cacher ligne orange' /&gt;" Guid="29e57a30-fba6-4d4f-a12d-1baa0865bdcb" ImageBase64="" InformativeScreenshot="ba97ca8db2516fb86125a9fc6436e2c0.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+              </uix:NCheck.Target>
+            </uix:NCheck>
+            <uix:NGetText DisplayName="Get Text RefundAmount (in)" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="77f98d6a-a675-464a-a755-66e4223a256e" ScrapingMethod="Native" Version="V1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="181, 954, 68, 20" ElementType="Text" FriendlyName="'7,99'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='tloBottom' /&gt;&lt;wnd ctrlname='tloBalance' /&gt;&lt;wnd ctrlname='lblSumIn' /&gt;&lt;ctrl name='*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='tloBottom' /&gt;&lt;wnd ctrlname='tloBalance' /&gt;&lt;wnd ctrlname='lblSumIn' /&gt;&lt;ctrl role='text' automationid='' /&gt;" Guid="86161a1c-c3e1-45fc-b851-5cd0e16725f7" ImageBase64="" InformativeScreenshot="7ceefdface8064d0fad97867ea16d0ea.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:String">[out_RefundAmount]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Refund amount : &quot;+out_RefundAmount]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Private: Type Into 'Remboursement Acompte'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="77f98d6a-a675-464a-a755-66e4223a256e" Text="[&quot;Remboursement acompte &quot;+ in_TotalVSPartial +&quot; Isell&quot;]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="52, 567, 180, 17" ElementType="Cell" FriendlyName="'Remboursement Acompte'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd ctrlname='grdSacOutDetail' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 1' role='row' /&gt;&lt;ctrl name='Column 2 Row 1' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd ctrlname='grdSacOutDetail' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 1' role='row' /&gt;&lt;ctrl name='Column 2 Row 1' role='cell' automationid='' /&gt;" Guid="3dfca5a7-5986-4aac-a63e-84361b2fc89c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALgAAAAVCAYAAAD1sST3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMSSURBVGhD7Vc7bsMwDPXxeqAOPUfnDpmbQySnSLeiSycvQbZMqqjoQ9KkqshuATsk8KKYFr96oZ3hfD673W7nYDUYtgDM5wEuDIatYhhePm5MHwYH3221de1r4DN8D9f+gygMhpVDJnj6BRgMa0bbBP92BzeVr+Mn29eB94tz4+iepHtbx+vovnwfD+/Cva2j5dzVPcDHi3ue6GU0THDBYTic9iAqtkxw6FGltqfj1R2Ofs/pW7z/5/glv8Vxb7wlCN4+wbnDT/c2Xt3bK9Z14GEJDv2DnqZV2vPHeASCeywywWEaZUlJQYKni7eN4idV2RdtQxHX8KgOggoiPtOUCz7LxHs+xUc89hPuQ85F8GtAd641W0/Sw4j1QFx8XeIHQP9iHeBTzQ/VKupb8sa9AVHyE2vDEP1EPRasz2cy0njhXokhxmZ7CjAf6+c84x28HHpIhB1EeD8PhdNE0ns7IaYrTwLQZ1tUHNGjWNQPJWL+j4AnB7O/O1fVltYQ9lcmFtjmw+D5aXVr+t4et/QlXgdofvCeqJfORK1Ti433EECdN78kT6WejglOX0+goImAc5I49aEWEW0mzUu+iE/WTO4nSiZS3D+Rxlyrtih2zkklOO0fvp7UHTHRp3wb8ub5ZRuUn1pbskl2kh//nduLZ6IQXI3N7TNQnbAninTO/e/grDjpUPCefyd4RnoU32LPybVqi2LnnDSCgz60n0otxkQv9mMewcXaMBQ/EKfkUDmTCsHF2Nw+Q+Bj5Zw7JjjTQSKssb3Nz4lpekIa8Ck3kzZtwVw1Wxa7RvDsD+vTXq2Omr63x5xwUm3xOkDxQ+u5Ee0egquxuX1GqTPXwvTJZ/8E98DOQ1JJcOJNpEGCmkp8Zn36pYL4P1c+B7GZIV6R0oQZudZsUWzoS8gp54B7Bzr8epJQiCHXrehn9ZjmJ9aG8aufIvUz8fHYvZa+FuA6aWx+zrA2THDDqqES5U4s5ec/0TbBDavGIxPcwya4YbuoTvBEclttXfFKCA4XBsNW4UnvWW8wbBX7/d4ZDNvE3v0ADIZdBnvmhLIAAAAASUVORK5CYII=" InformativeScreenshot="976a858fa95c2a9eae6248a3420b41a1.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into Prix - Designation Ligne 1 (out)" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="HardwareEvents" ScopeIdentifier="77f98d6a-a675-464a-a755-66e4223a256e" Text="[out_RefundAmount]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="273, 567, 54, 17" ElementType="Cell" FriendlyName="'7,99'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd ctrlname='grdSacOutDetail' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 1' role='row' /&gt;&lt;ctrl name='Column 5 Row 1' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd ctrlname='grdSacOutDetail' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 1' role='row' /&gt;&lt;ctrl name='Column 5 Row 1' role='cell' automationid='' /&gt;" Guid="8dbe1b02-755f-4ac7-a332-82be5fb9ed1c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAVCAYAAAAXQf3LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVFhH7ZUxEoMgEEU5ngeyyDmsLazlEHoK0jk2VjaOndWGNaIYFpMCdZPIzJvJfnTCywIRXdfBGQghyDwkWZbNnwUWZ4CiVL4XQtzucApalMwDMnbS1PbEoVyi4WAjGpUDOEM1zrOxmub0KPL3uYFtR1HcWXDeA7QtRGPdQAEDpMlGbr3LVLSCtO0hXmVP+bqsnNqXmxrhKao79LpQky+dm7Yrbm9fPtUIS9FYuVtvmRuP4TgKpQUnIV9u4CeatFBb3dmC2qK+nJ0oLpK6NSmwi9SzVM5MFG9M9xKasc8idp66de3cepeXKC7Y+e9cy6/OotU1X25geRmt0aIfntktvkA0DJfooRwtisUZoCiV74X+Pv3L/gNSSvh9JDwAlvME4r3L8hkAAAAASUVORK5CYII=" InformativeScreenshot="8853af5b1dbea7ca17c58103fe1a48cf.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ui:UiElementExists DisplayName="Element Exists 'cell  Column 2 Row 1'" Exists="[Freight]" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2902b557-2e05-428b-901c-b0824569064c" InformativeScreenshot="cb497813938ae6b824f59f3b61e678e2" Selector="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd ctrlname='grdSacOutDetail' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 2' role='row' /&gt;&lt;ctrl name='Column 2 Row 2' role='cell' /&gt;" TimeoutMS="2000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[Freight]" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="492,582.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,495.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Out'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Right" ScopeIdentifier="77f98d6a-a675-464a-a755-66e4223a256e" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="63, 591, 229, 26" ElementType="Cell" FriendlyName="'Freight refund'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd ctrlname='grdSacOutDetail' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 2' role='row' /&gt;&lt;ctrl name='Column 2 Row 2' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd ctrlname='grdSacOutDetail' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 2' role='row' /&gt;&lt;ctrl name='Column 2 Row 2' role='cell' automationid='' /&gt;" Guid="805c5260-7a5c-4351-b028-82c768d35fae" ImageBase64="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" InformativeScreenshot="d1e2b5acb09dfadd96b1b435956e623e.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="16, 526, 62, 24" ElementType="Text" FriendlyName="'Out'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd aaname='Out' cls='WindowsForms10.STATIC.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpInOut' /&gt;&lt;wnd ctrlname='splitConAddImportTab' /&gt;&lt;wnd ctrlname='SacLineInOutUc' /&gt;&lt;wnd ctrlname='TableLayoutPanel1' /&gt;&lt;wnd ctrlname='splitConSacInOut' /&gt;&lt;wnd aaname='Out' cls='WindowsForms10.STATIC.*' check:text='Out' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAAYCAYAAACiNE5vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALSSURBVFhH7ZZJT1NRFID7M1iZ4E5j4sKNK6NxyDNRojEBjBolGgeMz4HCaxhMxGo0FNCKymSrghEcKrFiC4pDjQMVEQvSAhWwNZShw/sHn1fEpGBlp015Lr7FzTnn3ny55+ZcndPpRIvojEYjWkRnNpvRIjpVVdEi/8W1xjziX/F3OWg2GDgpMMxQWlHNzTdBQlOxBDWpwx/EJwn022mtkjm0UmLTBglJ+sE6MrK2s994jY6+EN+mEtXGEYugjnvp6uzD0x9gMlFOkkgsHvXSUS1jPLAN4ws1TjCI93kNV7LTOWjt4dVghNjc2ngiY6j99SiymbKal/gT5SSJxOLDdiymCo7nN/JBSIdjv2IxIoOv6LEeJD37CjXPvQTn1saTauKBp+eovFCO3tLNuFjPutUpHyOddexaUkydrQvvkItnjga2W9yMhMLTOUOuehwN+VztcHNPWcXa5ctYuuEIcp2LYRGPxu+XJBKK+20KZeYyFJv/t5iqDhP03acwTY+1qROPx0aTtZS0wnZ8wcnpHI/NgLV0HQUtHpyV2Wxds5H1u85Q8ejjdIfM+zz+EX9RXKLQMUawJ4VafdhegumiiYJmL5G58aifQO9tji1SsNxx07eQxKPeZqpNFzlaYmdArGfJj75n4L7C4o0mLrf3MrqQxNXJblovF6DszaGoVbT2RHQmNob/TQONuSvILHfRJmZ5+MsTHt8qZ/WeW7hHQ2JW99J2bi/Fm1NRXAj6Xlu4cWo3OzIOk5+nzPzcjqPXHxJjTqHpbQB/SOROfOLdw0vkShnk5uWhN5znRJbEkZ1CvG2c4Je7nN2xj5zNxZyvd/FZ7P/b80kCfxD/wRB9z65TLn5sW6Z/bT/JPJDPadEF3+K7oOsBjScktolblqQSZFmmqqEIiztMKOympUhGlgRFLbhFTXjWOclhHvGFzX9xraFdcZ/PhxbR1dbWoj1q+Q6r9V3G7w459gAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,185.33333333333334" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="77f98d6a-a675-464a-a755-66e4223a256e" Shortcuts="[d(hk)]m[u(hk)]" Version="V1" />
+                  </Sequence>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 1920, 1040" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPKSURBVFhH7VevayNBFO6fEVsZWVl7snCicRc4UcKpqCOcKKWmhIpSTpQQUUJFYCsCW1FIxMKuWUhEYCMCG3GwERUjKlZUjKh4930zu/nR2zt1m5oOPGZ25s173/vmmwnZk5NDkZMDa9/+v2nE1V/fGHN9qSLnoezpY3x4n0TCsuyo2IKG6ONqBiAgCCDalU0AYH4m+nMOoMipLGOx85YFsGJgtF/sXIZNaiKLNgC0NwAUOZZhAYzVE8Bsk4Ei5zJs1rDJ3wVAiOueJ985gE3q3wXAJvX/BMCHY9mxtjjbfh+o3ml9/f23OcbgXL6X42cfNra9iV0EYN4U015iOEZ2/AvOoyywVnYuQII8WZr5zbD37RwTc160yGuKuIkds8cV3AbAJNyofIlv98W/qsi4eyjxoCaqjzeClbK9KFGTtqQP2btBoK8a2CJJB5kfvtmSAAmeUDGSJ96Z+P0GrClx0JFk1BI92QKAzUiun2NxLw/E+VER57Qi7nlFoi7Wlg4AxhKHPUkVeoA0oAFAzVyTkGDlyRW9HJrvYf9MEq4BkD9oi3NZE+enNYJJA4DYBJB6eJ+1Rc9K01lH4v6BJGQA9CdhW3oXoB+N7JAFDQCRdy1R6BpgbNEjtIPm3LRkeIcfnOfs6DKmkqBdzIAChe5FRXxsUtOe3bBERaGlX81diUbXZhyNEOS+ahiLQ0c6F9YnWYzFRYVs7i0AdOvGOE6mYENDC7B0CpDbGkA1EBfpJvW97xWJJ6D7aSzpwoJJlzhnmH5BAJVINEB1aSIxAvdA79jroa9L5xxMovEIxoOWRA9NcW/qYA/UP9gC4sdmgQYoQpyhCiCUR9xbHAfPXOM42F+fHpngbtfeFr8PGp8tABdV+rdIAiBMZtbvoYE59ADVpwsX4rs2x0HwZEmNAGILAO9mftXQ0sVQhrc4jmUM4TSkAwBM4FzVDNWsRi18aKAHv7rECMhqE88CG96heh4ZCshbPs84CViQFQAPIoQGeP2og+FVFZXUDG2sundxZM6S1DEBdUI1m/NFxUY3ISjFufKOU2SsksDG942VFmg5S4pA1wCqRtXjG2jgvIorc2Qq5QYG57VhUPOAgCmFK8TAuZkzZfLsmVWhXScjuQbMNURMjjm3rQE+m7jXqQdqPFSJZKyUgajYlM4bCQgkn/9jDaazdc5r9ARsYsIY0/hzbQ0AP5V8OjeClG5bAKYQRJFTmbYGgCeVlBQ5lWkfAD4ArADg71H+wOzUkDP7awYAeBwMCDKxC2MuPkhkgH+ROSAa0+/Cslxycii/AZOsOfF0UZQJAAAAAElFTkSuQmCC" InformativeScreenshot="9b46e09c2eb03ab36bc2c516f75b5e3d.png" Selector="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;End [RefundOperations] ...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>
