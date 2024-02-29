@@ -1,0 +1,126 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ModifPlanning" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_sams" Type="InArgument(ui:UiElement)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1150,1096.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ModifPlanning_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ModifPlanning" sap:VirtualizedContainerService.HintSize="546,1032" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="484,298.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_sams]" ScopeGuid="7259a6b9-61c7-4b51-8bce-35e7f6fde461" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <uix:NClick ClickType="Single" DisplayName="Click 'calendrier'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7259a6b9-61c7-4b51-8bce-35e7f6fde461" Version="V1">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable DesignTimeRectangle="254, 169, 41, 39" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl automationid='TabItemCollect' /&gt;&lt;ctrl automationid='MainGroup' /&gt;&lt;ctrl name='IKEA.Mfs.Sales.Uil.Sales.ServiceBooking.BookServices.Sterling.Fu*' role='list item' /&gt;&lt;ctrl role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl automationid='TabItemCollect' /&gt;&lt;ctrl automationid='MainGroup' /&gt;&lt;ctrl name='IKEA.Mfs.Sales.Uil.Sales.ServiceBooking.BookServices.Sterling.Fu*' role='list item' /&gt;&lt;ctrl role='push button' automationid='' /&gt;" Guid="57f066a3-00b7-434e-9587-4850fc1532f6" ImageBase64="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" InformativeScreenshot="55483da840241d5054de6fd09abefda4.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+            </uix:NClick.Target>
+          </uix:NClick>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sélection de la date de service/livraison" sap:VirtualizedContainerService.HintSize="484,582.6666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="baa5e3a0-bbe8-4903-b8cf-fbc0899b3fa5" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,285.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="388,169.33333333333334" KeyModifiers="None" MouseButton="Left" Version="V1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="132, 32, 1431, 918" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPKSURBVFhH7VevayNBFO6fEVsZWVl7snCicRc4UcKpqCOcKKWmhIpSTpQQUUJFYCsCW1FIxMKuWUhEYCMCG3GwERUjKlZUjKh4930zu/nR2zt1m5oOPGZ25s173/vmmwnZk5NDkZMDa9/+v2nE1V/fGHN9qSLnoezpY3x4n0TCsuyo2IKG6ONqBiAgCCDalU0AYH4m+nMOoMipLGOx85YFsGJgtF/sXIZNaiKLNgC0NwAUOZZhAYzVE8Bsk4Ei5zJs1rDJ3wVAiOueJ985gE3q3wXAJvX/BMCHY9mxtjjbfh+o3ml9/f23OcbgXL6X42cfNra9iV0EYN4U015iOEZ2/AvOoyywVnYuQII8WZr5zbD37RwTc160yGuKuIkds8cV3AbAJNyofIlv98W/qsi4eyjxoCaqjzeClbK9KFGTtqQP2btBoK8a2CJJB5kfvtmSAAmeUDGSJ96Z+P0GrClx0JFk1BI92QKAzUiun2NxLw/E+VER57Qi7nlFoi7Wlg4AxhKHPUkVeoA0oAFAzVyTkGDlyRW9HJrvYf9MEq4BkD9oi3NZE+enNYJJA4DYBJB6eJ+1Rc9K01lH4v6BJGQA9CdhW3oXoB+N7JAFDQCRdy1R6BpgbNEjtIPm3LRkeIcfnOfs6DKmkqBdzIAChe5FRXxsUtOe3bBERaGlX81diUbXZhyNEOS+ahiLQ0c6F9YnWYzFRYVs7i0AdOvGOE6mYENDC7B0CpDbGkA1EBfpJvW97xWJJ6D7aSzpwoJJlzhnmH5BAJVINEB1aSIxAvdA79jroa9L5xxMovEIxoOWRA9NcW/qYA/UP9gC4sdmgQYoQpyhCiCUR9xbHAfPXOM42F+fHpngbtfeFr8PGp8tABdV+rdIAiBMZtbvoYE59ADVpwsX4rs2x0HwZEmNAGILAO9mftXQ0sVQhrc4jmUM4TSkAwBM4FzVDNWsRi18aKAHv7rECMhqE88CG96heh4ZCshbPs84CViQFQAPIoQGeP2og+FVFZXUDG2sundxZM6S1DEBdUI1m/NFxUY3ISjFufKOU2SsksDG942VFmg5S4pA1wCqRtXjG2jgvIorc2Qq5QYG57VhUPOAgCmFK8TAuZkzZfLsmVWhXScjuQbMNURMjjm3rQE+m7jXqQdqPFSJZKyUgajYlM4bCQgkn/9jDaazdc5r9ARsYsIY0/hzbQ0AP5V8OjeClG5bAKYQRJFTmbYGgCeVlBQ5lWkfAD4ArADg71H+wOzUkDP7awYAeBwMCDKxC2MuPkhkgH+ROSAa0+/Cslxycii/AZOsOfF0UZQJAAAAAElFTkSuQmCC" InformativeScreenshot="b0797a1f833fa9dbf4e4e250021e2b07.png" Selector="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ServiceDateSelectionTransportUi' isremoteapp='1'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
