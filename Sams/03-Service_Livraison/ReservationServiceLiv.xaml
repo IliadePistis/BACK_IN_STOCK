@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3881.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,4036.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReservationServiceLiv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,20 +109,20 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ReservationServiceLiv" sap:VirtualizedContainerService.HintSize="1218,3816.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReservationServiceLiv" sap:VirtualizedContainerService.HintSize="1218,3972" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1156,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [ReservationServiceLiv] ...&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="1156,3336.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="1156,3492" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1122,3039.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1122,3194.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="DefaultDate" />
               <Variable x:TypeArguments="x:String" Name="NoSupplyMessage" />
@@ -229,7 +229,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Errors (piipa,'" sap:VirtualizedContainerService.HintSize="1060,1900" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="10" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Errors (piipa,'" sap:VirtualizedContainerService.HintSize="1060,2055.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="10" Version="V1">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,762" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
@@ -262,7 +262,7 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="556,1678.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="556,1834" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -296,6 +296,11 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\DateChoice.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="494,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\DateChoice.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                   <uix:NClick ClickType="Single" DisplayName="Click 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="494,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="1272, 797, 77, 16" ElementType="Text" FriendlyName="'Sauvegarder'" FullSelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Sauvegarder' role='push button' /&gt;&lt;ctrl name='Sauvegarder' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Sauvegarder' role='push button' /&gt;&lt;ctrl name='Sauvegarder' role='text' automationid='' check:text='Sauvegarder' /&gt;" Guid="9617653c-5395-49ae-8cb4-bd7ba89e5a20" ImageBase64="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" InformativeScreenshot="7df2ed01d07d1924aa57729fba4a353f.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
