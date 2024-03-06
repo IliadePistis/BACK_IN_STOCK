@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DateChoice" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1150,10053.333333333334" sap2010:WorkflowViewState.IdRef="DateChoice_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DateChoice" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1368.6666666666667,10668" sap2010:WorkflowViewState.IdRef="DateChoice_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -94,19 +94,20 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DateChoice" sap:VirtualizedContainerService.HintSize="989.3333333333334,9988.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DateChoice" sap:VirtualizedContainerService.HintSize="1378.6666666666667,10523.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="927.3333333333334,2153.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="597f2e1c-7e56-4937-9e78-e9cb8aa758d6" Version="V1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1316.6666666666667,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[Start DateChoice] . . .&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="1316.6666666666667,2358.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="597f2e1c-7e56-4937-9e78-e9cb8aa758d6" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="714.6666666666666,1856" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1282.6666666666667,2061.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="i" />
               <Variable x:TypeArguments="ui:UiElement" Name="uiElement" />
@@ -117,7 +118,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="652.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign sap:VirtualizedContainerService.HintSize="1220.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
               </Assign.To>
@@ -125,7 +126,7 @@
                 <InArgument x:TypeArguments="x:Int32">1</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="652.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign sap:VirtualizedContainerService.HintSize="1220.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[isExist]</OutArgument>
               </Assign.To>
@@ -133,86 +134,99 @@
                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="652.6666666666666,1492" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[isExist=false]" DisplayName="While" sap:VirtualizedContainerService.HintSize="1220.6666666666667,1694.6666666666667" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
               <ui:InterruptibleWhile.Body>
-                <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'push button'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="616,1321.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_4" OutUiElement="[uiElement]" ScopeIdentifier="597f2e1c-7e56-4937-9e78-e9cb8aa758d6" Version="V1">
-                  <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="572,1060" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="aastate" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetAttribute Attribute="aastate" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="510,193.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" InUiElement="[uiElement]" Version="V1">
-                        <uix:NGetAttribute.Result>
-                          <OutArgument x:TypeArguments="x:String">[aastate]</OutArgument>
-                        </uix:NGetAttribute.Result>
-                      </uix:NGetAttribute>
-                      <If Condition="[aastate.ToString.ToLower.Contains(&quot;focusable&quot;)]" sap:VirtualizedContainerService.HintSize="510,710.6666666666666" sap2010:WorkflowViewState.IdRef="If_2">
-                        <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="476,354" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Boolean">[isExist]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="434,141.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" InUiElement="[uiElement]" KeyModifiers="None" MouseButton="Left" Version="V1" />
-                          </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Int32">[i+1]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </Sequence>
-                        </If.Else>
-                      </If>
-                    </Sequence>
-                  </uix:NCheckState.IfExists>
-                  <uix:NCheckState.IfNotExists>
-                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Sequence>
-                  </uix:NCheckState.IfNotExists>
-                  <uix:NCheckState.Target>
-                    <uix:TargetAnchorable DesignTimeRectangle="276, 223, 41, 39" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="[String.Format(&quot;&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl automationid='TabItemHomeDelivery' /&gt;&lt;ctrl name='Date et heure de livraison' role='grouping' /&gt;&lt;ctrl idx='{0}' name='IKEA.Mfs.Sales.Uil.Sales.ServiceBooking.BookServices.Sterling.Fu*' role='list item' /&gt;&lt;ctrl role='push button' /&gt;&quot;, i)]" FuzzySelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl automationid='TabItemHomeDelivery' /&gt;&lt;ctrl name='Date et heure de livraison' role='grouping' /&gt;&lt;ctrl name='IKEA.Mfs.Sales.Uil.Sales.ServiceBooking.BookServices.Sterling.Fu*' role='list item' /&gt;&lt;ctrl role='push button' automationid='' /&gt;" Guid="ab14961d-0ee6-45a2-8960-37e6e0078188" ImageBase64="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" InformativeScreenshot="692952e04d2429b8fafe33e02c649a29.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
-                  </uix:NCheckState.Target>
+                <Sequence sap:VirtualizedContainerService.HintSize="1184,1524" sap2010:WorkflowViewState.IdRef="Sequence_23">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </uix:NCheckState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1122,92" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[i.ToString]" />
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'push button'" sap:VirtualizedContainerService.HintSize="1122,1281.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_4" OutUiElement="[uiElement]" ScopeIdentifier="597f2e1c-7e56-4937-9e78-e9cb8aa758d6" Version="V1">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="572,1060" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="aastate" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetAttribute Attribute="aastate" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="510,193.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" InUiElement="[uiElement]" Version="V1">
+                          <uix:NGetAttribute.Result>
+                            <OutArgument x:TypeArguments="x:String">[aastate]</OutArgument>
+                          </uix:NGetAttribute.Result>
+                        </uix:NGetAttribute>
+                        <If Condition="[aastate.ToString.ToLower.Contains(&quot;focusable&quot;)]" sap:VirtualizedContainerService.HintSize="510,710.6666666666666" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,354" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[isExist]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="434,141.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" InUiElement="[uiElement]" KeyModifiers="None" MouseButton="Left" Version="V1" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[i+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="496,201.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[isExist]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="276, 177, 41, 39" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="[String.Format(&quot;&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl automationid='TabItemHomeDelivery' /&gt;&lt;ctrl name='*' role='grouping' /&gt;&lt;ctrl name='IKEA.Mfs.Sales.Uil.Sales.ServiceBooking.BookServices.Sterling.Fu*' role='list item' idx='{0}' /&gt;&lt;ctrl role='push button' /&gt;&quot;, i)]" FuzzySelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl automationid='TabItemHomeDelivery' /&gt;&lt;ctrl name='Date et heure de livraison' role='grouping' /&gt;&lt;ctrl name='IKEA.Mfs.Sales.Uil.Sales.ServiceBooking.BookServices.Sterling.Fu*' role='list item' /&gt;&lt;ctrl role='push button' automationid='' /&gt;" Guid="38b10c7d-17b1-42d7-9f2a-0e6ec217096b" ImageBase64="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" InformativeScreenshot="e9e2f7a9e759b4183ce9e99b6bbb573c.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
               </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="isExist=false" />
-              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
           </Sequence>
         </ActivityAction>
@@ -221,7 +235,7 @@
         <uix:TargetApp Area="161, 30, 1653, 1038" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPKSURBVFhH7VevayNBFO6fEVsZWVl7snCicRc4UcKpqCOcKKWmhIpSTpQQUUJFYCsCW1FIxMKuWUhEYCMCG3GwERUjKlZUjKh4930zu/nR2zt1m5oOPGZ25s173/vmmwnZk5NDkZMDa9/+v2nE1V/fGHN9qSLnoezpY3x4n0TCsuyo2IKG6ONqBiAgCCDalU0AYH4m+nMOoMipLGOx85YFsGJgtF/sXIZNaiKLNgC0NwAUOZZhAYzVE8Bsk4Ei5zJs1rDJ3wVAiOueJ985gE3q3wXAJvX/BMCHY9mxtjjbfh+o3ml9/f23OcbgXL6X42cfNra9iV0EYN4U015iOEZ2/AvOoyywVnYuQII8WZr5zbD37RwTc160yGuKuIkds8cV3AbAJNyofIlv98W/qsi4eyjxoCaqjzeClbK9KFGTtqQP2btBoK8a2CJJB5kfvtmSAAmeUDGSJ96Z+P0GrClx0JFk1BI92QKAzUiun2NxLw/E+VER57Qi7nlFoi7Wlg4AxhKHPUkVeoA0oAFAzVyTkGDlyRW9HJrvYf9MEq4BkD9oi3NZE+enNYJJA4DYBJB6eJ+1Rc9K01lH4v6BJGQA9CdhW3oXoB+N7JAFDQCRdy1R6BpgbNEjtIPm3LRkeIcfnOfs6DKmkqBdzIAChe5FRXxsUtOe3bBERaGlX81diUbXZhyNEOS+ahiLQ0c6F9YnWYzFRYVs7i0AdOvGOE6mYENDC7B0CpDbGkA1EBfpJvW97xWJJ6D7aSzpwoJJlzhnmH5BAJVINEB1aSIxAvdA79jroa9L5xxMovEIxoOWRA9NcW/qYA/UP9gC4sdmgQYoQpyhCiCUR9xbHAfPXOM42F+fHpngbtfeFr8PGp8tABdV+rdIAiBMZtbvoYE59ADVpwsX4rs2x0HwZEmNAGILAO9mftXQ0sVQhrc4jmUM4TSkAwBM4FzVDNWsRi18aKAHv7rECMhqE88CG96heh4ZCshbPs84CViQFQAPIoQGeP2og+FVFZXUDG2sundxZM6S1DEBdUI1m/NFxUY3ISjFufKOU2SsksDG942VFmg5S4pA1wCqRtXjG2jgvIorc2Qq5QYG57VhUPOAgCmFK8TAuZkzZfLsmVWhXScjuQbMNURMjjm3rQE+m7jXqQdqPFSJZKyUgajYlM4bCQgkn/9jDaazdc5r9ARsYsIY0/hzbQ0AP5V8OjeClG5bAKYQRJFTmbYGgCeVlBQ5lWkfAD4ArADg71H+wOzUkDP7awYAeBwMCDKxC2MuPkhkgH+ROSAa0+/Cslxycii/AZOsOfF0UZQJAAAAAElFTkSuQmCC" InformativeScreenshot="c6a9b1d2607b641e0dd3b7d8e73588e7.png" Selector="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1'/&gt;" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sélection de la date de service/livraison" sap:VirtualizedContainerService.HintSize="927.3333333333334,7684.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f28fb5e8-b17d-4cf8-b7f4-1ba7fbd137f5" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Sélection de la date de service/livraison" sap:VirtualizedContainerService.HintSize="1316.6666666666667,7644.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f28fb5e8-b17d-4cf8-b7f4-1ba7fbd137f5" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -488,7 +502,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656.6666666666666,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;[Changement de semaine] ...&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656.6666666666666,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[Changement de semaine] ...&quot;]" />
                         <uix:NClick ClickType="Single" DisplayName="Click 'Suivant'" sap:VirtualizedContainerService.HintSize="656.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f28fb5e8-b17d-4cf8-b7f4-1ba7fbd137f5" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable DesignTimeRectangle="961, 848, 146, 25" ElementType="Button" FriendlyName="'Suivant'" FullSelectorArgument="&lt;wnd ctrlname='ElementHost1' /&gt;&lt;wnd cls='HwndWrapper*' title='ElementHost1' /&gt;&lt;ctrl name='ElementHost1' role='pane' /&gt;&lt;ctrl name='Suivant' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='ElementHost1' /&gt;&lt;wnd cls='HwndWrapper*' title='ElementHost1' /&gt;&lt;ctrl name='ElementHost1' role='pane' /&gt;&lt;ctrl name='Suivant' role='push button' automationid='' check:text='Suivant' /&gt;" Guid="04f007db-c4a1-4f60-912f-c500cd705751" ImageBase64="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" InformativeScreenshot="bb4c49035215b9d443dcd143b2e087a8.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ServiceDateSelectionTransportUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
@@ -765,5 +779,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1316.6666666666667,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[End DateChoice] ...&quot;]" />
   </Sequence>
 </Activity>

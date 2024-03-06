@@ -15,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,4745.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,5932</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Service_Livraison_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -132,22 +132,22 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DeliveryStatus" sap:VirtualizedContainerService.HintSize="742.6666666666666,4600.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DeliveryStatus" sap:VirtualizedContainerService.HintSize="742.6666666666666,5827.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [02-DeliveryStatus] ...&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="680.6666666666666,4120.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="680.6666666666666,5347.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: iSell" sap:VirtualizedContainerService.HintSize="642,3881.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_sams]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_sams]" ScopeGuid="636ca15e-8c7c-4277-b5e0-aa3e4a75cc88" Version="V1">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: iSell" sap:VirtualizedContainerService.HintSize="642,4798" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_sams]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_sams]" ScopeGuid="636ca15e-8c7c-4277-b5e0-aa3e4a75cc88" Version="V1">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="608,3742" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="608,4658.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_ServiceLiv0" />
                   <Variable x:TypeArguments="sd:DataTable" Name="dt_ServiceLiv1" />
@@ -181,7 +181,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NExtractData>
-                <Sequence DisplayName="Delivery status" sap:VirtualizedContainerService.HintSize="546,3226.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Delivery status" sap:VirtualizedContainerService.HintSize="546,4143.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="dt_Partial" />
                     <Variable x:TypeArguments="x:String" Name="Etat_NOSUPPLY" />
@@ -347,10 +347,10 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FilterDataTable>
                   </Sequence>
-                  <If sap2010:Annotation.AnnotationText="Cas 1 HF: Message deviation vide =&gt; Sauvegarder commande" Condition="[in_MsgDev.trim=&quot;&quot; and dt_New_BackOrd.RowCount = 1 and dt_ServiceLiv0.rowCount = 2]" DisplayName="OK - Case 1" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If sap2010:Annotation.AnnotationText="Cas 1 HF: Message deviation vide =&gt; Sauvegarder commande" Condition="[in_MsgDev.trim=&quot;&quot; and dt_New_BackOrd.RowCount = 1 and dt_ServiceLiv0.rowCount = 2]" DisplayName="OK - Case 1" sap:VirtualizedContainerService.HintSize="484,417.3333333333333" sap2010:WorkflowViewState.IdRef="If_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
@@ -367,10 +367,18 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\02-Service_Livraison\Cas\01_Cas1.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\01_Cas1.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_sams]</InOutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas1">[in_NoSupplyMessageCas1]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_raison">Délai resp IKEA</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">
+                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
+                            </InOutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas1">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_raison">
+                              <Literal x:TypeArguments="x:String">Délai resp IKEA</Literal>
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
+                            </OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -385,10 +393,10 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Cas 2 HF: une ligne en NEW ou BACK ORDERED =&gt; sauvegarder commande" Condition="[dt_New_BackOrd.RowCount = 1 and dt_ServiceLiv0.rowCount = 2]" DisplayName="FAIT - Case 2-2" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="If_16">
+                  <If sap2010:Annotation.AnnotationText="Cas 2 HF: une ligne en NEW ou BACK ORDERED =&gt; sauvegarder commande" Condition="[dt_New_BackOrd.RowCount = 1 and dt_ServiceLiv0.rowCount = 2]" DisplayName="FAIT - Case 2-2" sap:VirtualizedContainerService.HintSize="484,432" sap2010:WorkflowViewState.IdRef="If_16">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
@@ -405,9 +413,15 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="02_Cas5-2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\02_Cas5-2.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas5">[in_NoSupplyMessageCas5]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
+                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
+                            </InOutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas5">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
+                            </OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -422,10 +436,10 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Cas 3 HF: plusieurs lignes dont au moins 1 en NEW ou BACK ORDERED =&gt; annulation partielle " Condition="[dt_New_BackOrd.RowCount &gt;= 1 AND dt_Partial.RowCount = 0 AND dt_ServiceLiv0.RowCount &gt;= 3]" DisplayName="FAIT - Case 2-3" sap:VirtualizedContainerService.HintSize="484,132.66666666666666" sap2010:WorkflowViewState.IdRef="If_10">
+                  <If sap2010:Annotation.AnnotationText="Cas 3 HF: plusieurs lignes dont au moins 1 en NEW ou BACK ORDERED =&gt; annulation partielle " Condition="[dt_New_BackOrd.RowCount &gt;= 1 AND dt_Partial.RowCount = 0 AND dt_ServiceLiv0.RowCount &gt;= 3]" DisplayName="FAIT - Case 2-3" sap:VirtualizedContainerService.HintSize="484,432" sap2010:WorkflowViewState.IdRef="If_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
@@ -443,10 +457,18 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_Cas2-3.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\03_Cas2-3.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas2">[in_NoSupplyMessageCas2]</InArgument>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">[in_OrderValue]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas2">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
+                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
+                            </InOutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_OrderValue" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
+                            </OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -484,7 +506,21 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\Cas\03_Cas3-4.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\03_Cas3-4.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">
+                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
+                            </InOutArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_partial">
+                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Partial" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas3">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtWithDate">
+                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_WithDate" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -521,7 +557,21 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\Cas\04_Cas4-5.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\04_Cas4-5.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtPartial">
+                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Partial" />
+                            </InArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">
+                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
+                            </InOutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas4">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
+                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtWithDate">
+                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_WithDate" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -573,7 +623,7 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="646.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="502,332" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
