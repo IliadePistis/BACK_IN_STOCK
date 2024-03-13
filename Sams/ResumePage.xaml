@@ -1,0 +1,398 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAMS_Opertaions" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_Sams" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="in_Feedback" Type="InArgument(x:String)" />
+    <x:Property Name="in_HFB" Type="InArgument(x:String)" />
+    <x:Property Name="in_Origine" Type="InArgument(x:String)" />
+    <x:Property Name="in_Raison" Type="InArgument(x:String)" />
+    <x:Property Name="in_SAV" Type="InArgument(x:String)" />
+    <x:Property Name="In_File" Type="InArgument(x:String)" />
+    <x:Property Name="in_Resp" Type="InArgument(x:String)" />
+    <x:Property Name="in_reclamation" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:SAMS_Opertaions.In_File>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAMS_Opertaions.In_File>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1150,4557.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAMS_Opertaions_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="654,4492.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [ResumePage] ...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: SAMS " sap:VirtualizedContainerService.HintSize="592,4012.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[io_Sams]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_Sams]" ScopeGuid="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,3873.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap:VirtualizedContainerService.HintSize="496,1758.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Résumé'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="157, 154, 89, 28" ElementType="TabPage" FriendlyName="'Résumé'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;ctrl name='Résumé   ' role='page tab' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;ctrl name='Résumé   ' role='page tab' automationid='' check:text='Résumé' /&gt;" Guid="bfd87759-901e-4a13-9617-e50ddff277a7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAgCAYAAABwzXTcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMJSURBVGhD7ZYxbiJBEEWJOIEvQMYhiJxxDm5AAjkpkQNugAhsMiQyAhKIuACpLQskBBjLsixLvXoj1brord5t787sTNDBk8vVv6tq/vS0XTudTi7xf0mml0AyvQSS6SWQTC+B2nw+d4+Pj+Ziohhqg8HArVYr9/T05F5eXhI5cT6fTcPJ1+7u7hzGLxYL9/n5mciJt7c303TytdFo5LrdrptOp9lbSOTDZrNx+uomh+Gvr69fpk8mk+yKSeTD/f19doPI1X25XNz7+7s7Ho9fpiM6HA6JnFgul05f3Ri+3+8zfpr+8PDwy/2T+HvW67UTb2ezmfv4+HDPz89ut9v9m+kU4O7iE7LYbrfmPg0aalDLWi8Dea6Y+UMUZjqDtdtt12w2TYbDoblPg4Ya1LLWy0CeK2b+EIWZzmnG3Far5fr9vgmDWyeGHGu/05QBBvV6vQxiSxND4aZjnLVOnnV0/loep6kImCePL6+SpudxbxYB8zAX81nrsVTOdIZgTbCuF60h1vmQXvKh+qGawDo6vc/XfIfCTe90Olnsw+D6U5XTTZ59wu3tbdafB7c0xHL6JE99PYvOE9frdddoNK7qh2rSl3V0su5rdK8YCjf95ubmaljBH5qYl0BeXgzIA3PSLA2xvDxiapPXs+g8MYaPx+Or+qGa9JUXI+u+RveKoXDTY/97Cen5UnhxxPozl70MLTH5GNO1RvqSD+npzxzEAnNavWKozJ0u+tCXgbGyl1hOn7w0q6aVD/XVc/p6fR1pKnvS9cNoQg8f+hugzSVmJrl2QjWtfKivntPX6+tIg+FyPX6Hypnu6zEYYxnOitHzk9/9mqLRV0FMX63x9QIzSF+dj6EypnNq/D+SoE+0pSEO/dGTvXJliV735ac/p9b4NQXdV/bFUhnTacgDSF6QB+ZEWRpicqyhEaP1Xq4sfhezJKavNafW+DUF3Vf2xVKY6fJpU9RaD32e5Hkg4U8av7701Xt1L7+v6HWdkEZ6Wn2/Q2GmJ8Ik00sgmV4CyfQSSKaXQNj0nfsBWkkJOPKk890AAAAASUVORK5CYII=" InformativeScreenshot="89863bc36e69a54c93ec6a89d1aa506b.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'HFB" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_7" Item="[in_HFB]" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="2">
+                    <x:String>HFB</x:String>
+                    <x:String>9 Service clientèle</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="225, 363, 415, 32" ElementType="DropDown" FriendlyName="'9 Service clientèle'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboCausingDepartment' aaname='HFB' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboCausingDepartment' aaname='HFB' /&gt;" Guid="0c0256ec-dbee-4c4a-9a3c-66c112ea67f3" ImageBase64="" InformativeScreenshot="395f7c3993697a382c05734fb1ec165d.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NSelectItem DisplayName="Select Item 'Origine'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_8" Item="[in_Origine]" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                    <x:String>Origine</x:String>
+                    <x:String>65 Réclamation CCD Resp IKEA/Client</x:String>
+                    <x:String>66 Réclamation CCD Resp Transporteur</x:String>
+                    <x:String>67 Réclamation LCD Resp IKEA/Client</x:String>
+                    <x:String>68 Réclamation LCD Resp Transporteur</x:String>
+                    <x:String>73 Réclamation sur magasin</x:String>
+                    <x:String>72 Réclamation Montage Meuble et Canapé</x:String>
+                    <x:String>69 Réclamation POSTALE Domicile</x:String>
+                    <x:String>70 Réclamation POSTALE Point Retrait</x:String>
+                    <x:String>71 Réclamation Cliquez et</x:String>
+                    <x:String>64 Réclamation Installation Cuisine/Salle de bain</x:String>
+                    <x:String>63 Réclamation Qualité / Autres</x:String>
+                    <x:String>74 Réclamation Personlig</x:String>
+                    <x:String>62 Commande ASAP/Kitchen/Pce Dét</x:String>
+                    <x:String>61 Client hésitant / indécis</x:String>
+                    <x:String>75 Robots RTS ( Client seulement)</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="225, 406, 415, 32" ElementType="DropDown" FriendlyName="'Origine Origine'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboReason' /&gt;&lt;ctrl name='Origine' role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboReason' /&gt;&lt;ctrl name='Origine' role='combo box' automationid='' /&gt;" Guid="269c80d2-d969-49eb-a43e-b0eb691940da" ImageBase64="" InformativeScreenshot="79ea037043202f12d2bdd5cdfa8d853d.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NSelectItem DisplayName="Select Item 'Raison'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_9" Item="04 Délai article en statut &quot;No Supply&quot;" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="12">
+                    <x:String>Raison</x:String>
+                    <x:String>01 Carton endo lors de livraison CCD</x:String>
+                    <x:String>02 Carton mqt lors de la livraison CCD</x:String>
+                    <x:String>03 Délai quantité/Volume exceptionnelle</x:String>
+                    <x:String>11 Délai article en statut "No Stock"</x:String>
+                    <x:String>04 Délai article en statut "No Supply"</x:String>
+                    <x:String>05 Délai article en statut "Back ordered"</x:String>
+                    <x:String>06 CDU manquante ou endommagé</x:String>
+                    <x:String>07 Client absent lors de la livraison ou demande un report(CCD)</x:String>
+                    <x:String>08 Produit constaté endommagé au déballage, mais carton intact (CCD)</x:String>
+                    <x:String>09 Liv imp ou délai marchandise non transmise</x:String>
+                    <x:String>10 Marchandise ne passe pas chez le client (CCD)</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="185, 365, 347, 26" ElementType="DropDown" FriendlyName="'Raison Raison'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboSubReason' /&gt;&lt;ctrl name='Raison' role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboSubReason' /&gt;&lt;ctrl name='Raison' role='combo box' automationid='' /&gt;" Guid="6fc0cf63-3b00-478f-b24f-ede0984af4d3" InformativeScreenshot="e24d777e88a70f24c1dcceb6477ec9be.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="20, 370, 165, 20" ElementType="Text" FriendlyName="'Raison'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='MdifLabel29' /&gt;&lt;ctrl name='Raison' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='MdifLabel29' /&gt;&lt;ctrl name='Raison' role='text' automationid='' check:text='Raison' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKkAAAAYCAYAAACBQ93/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARhSURBVHhe7dnNT9NnAMDx3XbxtGVLD7tsmWbuYHbYlrhshk1m6mHEZL6sqIFNJtayVrIySitjynw5TCDYjHRqQcZceR9aBDfAFaVGpHTVDgrUVmilIFD6H3z3CGMgGDCNyRp8Dp806e/5vRy++T19nj4Xi8WQpEQzPj6O3W7H4/EgI5USkoxUSngyUinhrRDpMP6eFqoNBr4VDAuYCgr58fd++kYmF52zyNQ4sb+bOVvzB/VdPkYfN0aSlrFCpLe5aTtJ5vNref/DZDYrlSgf2pKEcvN7JH9xgcYbASJLzltgMkKs24qp+AKldjcjjxsjSct4gkjL0SuM1PtCBOa+H+sj6DCz5xUtpbYb/DW98BxJerrii3T6PqNDVzGn7BCRtnMttPAcSXq64ov0wSDDN8o5+EamiLQLV38nHRX5sz8F5qSbyDnTSUBM99FHpvsQkeAVrKodpP07Nk1rwtodIzI5e/1Rt53GEvX8tfIrONs5RCzkJdhhRlVgJj83DW26OLYzk12FzbjC4zz477ml1eQJIi1Cs+YD9mRlo5tbOOmNGDTfY8qtobXHz/Cwm54W6yMLK/WBdHT5JmzuEGMtRpRfnkBtcdA/4sLbbGT/Dg3ag3oM2elodV+x/4QTb3iCyaFO6q0/oNbp0Ijr5Ar7Du3DWGbF3t6B7xcNirdSUWm0HD5iQKc9yOcZqVicQXyRxc8vrQZxLJySSdq4lY1v6jh3e5ihqdmxE+FBfF026mtt2Gw2Thu3k6dRYrSHCNnnI+3r/5Pusl0kZZ2i0FxJ65Vafmtq4Ih4G3rE2/BuSz55+XlsO9k28+aOCnd+TsN4LAe1uQFflYj09b3oK65xazRG4Ka4p16Bvt7HzcDi55dWgzim+xD9V2ux7P6M420DuMNRpici9HWex5zxIuteVaBQKHjphTVs2LQ0Uv89F4M1h9iw/jUx7mU+Ts+lpGWIgcEwY9FprpuVmL5Tk9vgn38OpxlDSQnKo+X4qrNRpBRhbvMyLI7JSFe/OCKdZmqwC09VNmsPX6Su5x4hZyVnirJYZ/iV667b+Hw+2s9lUWp6TKTRSaJjIwwODIhxXVw6rUGz6V3WbzhOjQj1soxUWiS+hdOEj+Cts+x9+xjnL7pxOSxUFmfxUWkv/vsPN/dHcFZoKdIujdTt7aBDTPcFdS56/GFG+i5RW5jHLnGPanEPz0rTvYz0mRNfpLEIo3c7+WnrFo6WNdDgaKD13DfsTtGQ83WuWDhpSf/kHbanLI30jv8azqo9ZHx6YHbhZFCLTx0ZqTacwTEiKy2cZKTPnBUiHcLb0YJFZcURjBBacGwyEqTbqqL4QiN2t0eMq+CUWFhtm9s2Ema2lpwRIs7lt6B2ZuZQ2BwgPB6dufbyW1BlqArqaOzxz/zFGhJvZodFhcURxCv3a1elFSKVpP+fjFRKeDJSKeHJSKWEJyOVEp6MVEp4c5H29vbKSKXENBdpU1OTjFRKTNFolEAggN/v5x+DQMKY6wuCogAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NSelectItem DisplayName="Select Item 'RCMP (CRC)'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_10" Item="[in_SAV]" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="46">
+                    <x:String>SAV en charge</x:String>
+                    <x:String>Avignon (Vedène) (018)</x:String>
+                    <x:String>Bayonne (310)</x:String>
+                    <x:String>Bordeaux (134)</x:String>
+                    <x:String>Brest (Guipavas) (060)</x:String>
+                    <x:String>Caen (199)</x:String>
+                    <x:String>Clermont-Ferrand (345)</x:String>
+                    <x:String>CPU (CPU)</x:String>
+                    <x:String>Dijon (086)</x:String>
+                    <x:String>DUMMIES (000) (DUMM)</x:String>
+                    <x:String>Evry (082)</x:String>
+                    <x:String>Franconville (389)</x:String>
+                    <x:String>Grenoble (435)</x:String>
+                    <x:String>Hénin Beaumont (051)</x:String>
+                    <x:String>La Madeleine (580)</x:String>
+                    <x:String>La Valentine (433)</x:String>
+                    <x:String>Lille (133)</x:String>
+                    <x:String>Lyon - Grand Parilly (562)</x:String>
+                    <x:String>Metz (260)</x:String>
+                    <x:String>Montpellier (402)</x:String>
+                    <x:String>Mulhouse (444)</x:String>
+                    <x:String>Nantes (316)</x:String>
+                    <x:String>Nice Saint Isidore (518)</x:String>
+                    <x:String>Orleans (487)</x:String>
+                    <x:String>Paris Nord (131)</x:String>
+                    <x:String>Plaisir (083)</x:String>
+                    <x:String>RCMP (CRC)</x:String>
+                    <x:String>Reims (198)</x:String>
+                    <x:String>Rennes (Pacé) (177)</x:String>
+                    <x:String>Rivoli (645)</x:String>
+                    <x:String>Rouen (Tourville la rivière) (163)</x:String>
+                    <x:String>SAMS Formation (902)</x:String>
+                    <x:String xml:space="preserve">SCC  (CIA)</x:String>
+                    <x:String>Service Office (053)</x:String>
+                    <x:String>St Etienne (431)</x:String>
+                    <x:String>St Priest (132)</x:String>
+                    <x:String>Strasbourg (239)</x:String>
+                    <x:String>Thiais (432)</x:String>
+                    <x:String>Toulon (315)</x:String>
+                    <x:String>Toulouse (242)</x:String>
+                    <x:String>Tours (434)</x:String>
+                    <x:String>TVA à taux Réduit (10%) (TVA)</x:String>
+                    <x:String>Vélizy (285)</x:String>
+                    <x:String>Vente à distance (241)</x:String>
+                    <x:String>Villiers (240)</x:String>
+                    <x:String>Vitrolles (130)</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="225, 492, 415, 32" ElementType="DropDown" FriendlyName="'RCMP (CRC)'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboQueueUnit' /&gt;&lt;ctrl name='SAV en charge' role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboQueueUnit' /&gt;&lt;ctrl name='SAV en charge' role='combo box' automationid='' /&gt;" Guid="7e4d0b0a-26a8-465c-bc7e-5b26b078801a" ImageBase64="" InformativeScreenshot="2a7a54ef62f0e1ccd6fb2ed7d40ab723.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NSelectItem DisplayName="Select Item 'File d´att.'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_11" Item="[In_File]" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="13">
+                    <x:String>File d´att.</x:String>
+                    <x:String>RCMP- Flux</x:String>
+                    <x:String>RCMP- CUSTOMER CARE</x:String>
+                    <x:String>RCMP-RESOLUTION</x:String>
+                    <x:String>RCMP- ANOMALIE RETOUR PARCEL</x:String>
+                    <x:String>RCMP- Cuisine et SDB</x:String>
+                    <x:String>RCMP- Electroménager</x:String>
+                    <x:String>RCMP- IB KA</x:String>
+                    <x:String>RCMP- RTS AUTO FAIL</x:String>
+                    <x:String>RCMP- RTS AUTO OK</x:String>
+                    <x:String>RCMP- RTS FAIL</x:String>
+                    <x:String xml:space="preserve">RCMP- RTS PARCEL FAIL </x:String>
+                    <x:String>RCMP- Z- FORMATION DES INTEGRATIONS</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="225, 536, 415, 32" ElementType="DropDown" FriendlyName="'File d´att.'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboQueueId' /&gt;&lt;ctrl name='File d´att.' role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboQueueId' /&gt;&lt;ctrl name='File d´att.' role='combo box' automationid='' /&gt;" Guid="3848a9db-59a0-4ea7-ac17-e920d1acfda6" ImageBase64="" InformativeScreenshot="669adc87f7a29eae554ef2d771da1443.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Resp Dossier'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,247.33333333333334" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="HardwareEvents" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Text="[in_Resp]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="230, 585, 349, 22" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboHandler' /&gt;&lt;wnd aaname='Sélect. Resp dossier' cls='Edit' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cboHandler' /&gt;&lt;wnd aaname='Sélect. Resp dossier' cls='Edit' /&gt;" Guid="a1ef37f7-9829-433a-bd35-4317383f5ccd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO4AAAATCAYAAACX4jHlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABRSURBVHhe7dNBDQAwEASh8296+6uHScADNyBHXAj6ce8chgpxIUhcCBIXgsSFIHEhSFwIEheCxIUgcSFIXAgSF4LEhSBbIUhcCBIXgsSFnO0BG34+ms7CMgIAAAAASUVORK5CYII=" InformativeScreenshot="f05c923ae45970dc89618e1adf92ca98.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Ajouter action'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_22" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="1174, 460, 287, 30" ElementType="Button" FriendlyName="'Ajouter action'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cmdAddTakenAction' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='cmdAddTakenAction' check:text='Ajouter action' /&gt;" Guid="8f3a4cd4-a52e-4b30-b3ae-bd00dd269187" ImageBase64="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" InformativeScreenshot="dba7ea93a0f8795deaa6ac9e4645933b.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+            <Sequence sap:VirtualizedContainerService.HintSize="496,1958.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Action feedback" sap:VirtualizedContainerService.HintSize="434,520" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="6451b07c-ab33-4ab4-b06c-f7231485c060" Timeout="180" Version="V1">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '99 Compta_Centralisé'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="6451b07c-ab33-4ab4-b06c-f7231485c060" Text="%[k(pgdn)]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="29, 295, 309, 25" ElementType="Cell" FriendlyName="'99 Compta_Centralisé'" FullSelectorArgument="&lt;wnd ctrlname='grpAction' /&gt;&lt;wnd ctrlname='grdAction' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 8' role='row' /&gt;&lt;ctrl name='Column 0 Row 8' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='grpAction' /&gt;&lt;wnd ctrlname='grdAction' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 8' role='row' /&gt;&lt;ctrl name='Column 0 Row 8' role='cell' automationid='' /&gt;" Guid="725507e3-28f1-4d9d-8190-b3781953f831" ImageBase64="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" InformativeScreenshot="3e278e790c460106f5a82c01a9ff7876.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ActionFeedbackUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="560, 179, 801, 651" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPKSURBVFhH7VevayNBFO6fEVsZWVl7snCicRc4UcKpqCOcKKWmhIpSTpQQUUJFYCsCW1FIxMKuWUhEYCMCG3GwERUjKlZUjKh4930zu/nR2zt1m5oOPGZ25s173/vmmwnZk5NDkZMDa9/+v2nE1V/fGHN9qSLnoezpY3x4n0TCsuyo2IKG6ONqBiAgCCDalU0AYH4m+nMOoMipLGOx85YFsGJgtF/sXIZNaiKLNgC0NwAUOZZhAYzVE8Bsk4Ei5zJs1rDJ3wVAiOueJ985gE3q3wXAJvX/BMCHY9mxtjjbfh+o3ml9/f23OcbgXL6X42cfNra9iV0EYN4U015iOEZ2/AvOoyywVnYuQII8WZr5zbD37RwTc160yGuKuIkds8cV3AbAJNyofIlv98W/qsi4eyjxoCaqjzeClbK9KFGTtqQP2btBoK8a2CJJB5kfvtmSAAmeUDGSJ96Z+P0GrClx0JFk1BI92QKAzUiun2NxLw/E+VER57Qi7nlFoi7Wlg4AxhKHPUkVeoA0oAFAzVyTkGDlyRW9HJrvYf9MEq4BkD9oi3NZE+enNYJJA4DYBJB6eJ+1Rc9K01lH4v6BJGQA9CdhW3oXoB+N7JAFDQCRdy1R6BpgbNEjtIPm3LRkeIcfnOfs6DKmkqBdzIAChe5FRXxsUtOe3bBERaGlX81diUbXZhyNEOS+ahiLQ0c6F9YnWYzFRYVs7i0AdOvGOE6mYENDC7B0CpDbGkA1EBfpJvW97xWJJ6D7aSzpwoJJlzhnmH5BAJVINEB1aSIxAvdA79jroa9L5xxMovEIxoOWRA9NcW/qYA/UP9gC4sdmgQYoQpyhCiCUR9xbHAfPXOM42F+fHpngbtfeFr8PGp8tABdV+rdIAiBMZtbvoYE59ADVpwsX4rs2x0HwZEmNAGILAO9mftXQ0sVQhrc4jmUM4TSkAwBM4FzVDNWsRi18aKAHv7rECMhqE88CG96heh4ZCshbPs84CViQFQAPIoQGeP2og+FVFZXUDG2sundxZM6S1DEBdUI1m/NFxUY3ISjFufKOU2SsksDG942VFmg5S4pA1wCqRtXjG2jgvIorc2Qq5QYG57VhUPOAgCmFK8TAuZkzZfLsmVWhXScjuQbMNURMjjm3rQE+m7jXqQdqPFSJZKyUgajYlM4bCQgkn/9jDaazdc5r9ARsYsIY0/hzbQ0AP5V8OjeClG5bAKYQRJFTmbYGgCeVlBQ5lWkfAD4ArADg71H+wOzUkDP7awYAeBwMCDKxC2MuPkhkgH+ROSAa0+/Cslxycii/AZOsOfF0UZQJAAAAAElFTkSuQmCC" InformativeScreenshot="0d9a9a52088e9219637705998e6fc4e3.png" Selector="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ActionFeedbackUi' isremoteapp='1'/&gt;" />
+                </uix:NApplicationCard.TargetApp>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NApplicationCard>
+              <uix:NClick ClickType="Single" DisplayName="Click '69 Traitement Listes'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="29, 317, 309, 25" ElementType="Cell" FriendlyName="'69 Traitement Listes'" FullSelectorArgument="&lt;wnd ctrlname='grpAction' /&gt;&lt;wnd ctrlname='grdAction' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl role='cell' text='69 Traitement Listes' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='grpAction' /&gt;&lt;wnd ctrlname='grdAction' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl role='cell' text='69 Traitement Listes' automationid='' /&gt;" Guid="c752e9eb-46b2-469c-b6d1-f1b1b062abdf" ImageBase64="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" InformativeScreenshot="b9f08a0f758ab8d697c17917e1181918.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ActionFeedbackUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '6901 Traitement Listes'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="429, 92, 335, 25" ElementType="Cell" FriendlyName="'6901 Traitement Listes'" FullSelectorArgument="&lt;wnd ctrlname='grpFeedback' /&gt;&lt;wnd ctrlname='grdFeedback' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 0' role='row' /&gt;&lt;ctrl name='Column 0 Row 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='grpFeedback' /&gt;&lt;wnd ctrlname='grdFeedback' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row 0' role='row' /&gt;&lt;ctrl name='Column 0 Row 0' role='cell' automationid='' /&gt;" Guid="f9d087e1-ddc5-4637-a8ca-a545a2544a69" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOQAAAAVCAYAAABWmUIxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVHhe7ZjRccMgDIY9nlfJu8fxQzbJKrnLAtmAIgGyhA24rRvj6//dqRdjCSRHvyEd7ve7g8Fg5xvBgrzdbjAY7ER7vV5WkACA84AgAegICBKAjoAgAeiItiCfsxuHwQ1k4+yecfgxxTFv0yMOep7zKOODvsE83DSMbk6TCE83j8t82sa1c5nHZHLsC6p98n8zus4ZfJqGIKmJFsGRCFkgpomUyFi8qelIZEl8WnBbglTQHEc06FHzfJfiugVB7uGsWsDHqQuy8PamXVDvXHJN/mpXzP38iBJpAQhyDQT5b6gKko+fq2OnJxMqH1+930qAmUD9jD8TJK/n56Ydluaj63ikZUv+kpfakeM9rmXLf5r4FMDjsYbgt4inGDv6WLPOet2FPUfWcCJJa4VHt7OWzVhwNZqCHH3DNn9Dep8/F2Rld6FceBnd3HqeLA/J08wbGjrlb+Ysxi61iP93d0iVs3l+ep4dtRRjwaVo75Dqi6Wmky9dsdkURNY83vMXO6Qd0y8EfinQMtpPzZP7slGAyc8KJtVSjc2eDU9VFENbkPw5riFpEXtridcmFlyK5m/IusAC0ozZ/ZVAfUsdIUh+Uah1zPrJL2tim0fE5FsWZDFW5SQ5/EaQQjqmRv89tQhZLLgUdUFmTSTNkDd+87+sieMEuTRlaMCaIHlc1SGCpvGGIKuxKqcjBGnFpvx31FKMBZeiIUgPN4A6GkWoAbaOSNwgG/6BYwQZGm5ZX3IwfsknNKbJSze35GibWAQZP2/GqpxEkNm6C+ucOX4z52BWYDRWqaUYC65EW5AAgI8BQQLQERAkAB0BQQLQEStBvt9vGAx2kkGQMFhHFgTp3BeqsFa7JlHUKgAAAABJRU5ErkJggg==" InformativeScreenshot="dea4f9eb9ca85a518c5ce85f4896ec41.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ActionFeedbackUi' isremoteapp='1' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Commentaire 'feedback'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Text="[in_Feedback]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="29, 414, 709, 125" ElementType="InputBox" FriendlyName="'Commentaire feedback'" FullSelectorArgument="&lt;wnd ctrlname='grpComment' /&gt;&lt;wnd ctrlname='txtComment' /&gt;&lt;ctrl name='Commentaire feedback' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='grpComment' /&gt;&lt;wnd ctrlname='txtComment' /&gt;&lt;ctrl name='Commentaire feedback' role='editable text' automationid='' /&gt;" Guid="db777264-3dc4-455f-8a0d-9d0936c1054b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAlUAAABtCAYAAACIsJRbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIfSURBVHhe7dZBDcQgAABB/KcyKoA/JmoDFZyHY58zyXrY8TzPkSRJ0l3jfd/zfZ8kSZIuGmutAwDAHVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAwVQAAAVMFABAYc86z95YkSdLf7fMDx36pTxZVw8kAAAAASUVORK5CYII=" InformativeScreenshot="be3b8ef4d2c1f64b12a3d9d48c23ee59.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ActionFeedbackUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="474, 569, 143, 36" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;wnd ctrlname='cmdOK' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='cmdOK' check:text='OK' /&gt;" Guid="645c18e5-46a8-4671-8ba3-405c40067d06" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAAcCAYAAACXkxr4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEbSURBVGhD7ZfBsYMwDETVk7pxJf/mVtyKq8iZDuhAwQz+WB4OyYFkldnDG0ZYXPxYLGRdVyM4UAgYFAKGEyJ/D/IFnANXXDST+3EOXHE0LMtCPgCFgEEhYFAIGOGF1JJMRUwamizXYb1mU81W//urZRXTXM8eMGIL2WSIJCtdQhMgekqZhJS0SUvlfB6Q0EKyDpvfaZL6pg9CatYtQWNaMAktRFs65vt7So77XUhP0twLSGwhl298sTQK2c8W3a+pzL14xBbySkL6mdJSwk/WvbxzhkSYsBqhhcxTVi1DItq6E3LU4zogsYVsvPcfckxbwKNveCG/BoWAQSFgUAgYFALGy0LIZ3EOXHHRTO7HORgL8n0oBAwKgWK1J+YvfzgCJi2TAAAAAElFTkSuQmCC" InformativeScreenshot="dd6b0e7b76eafe57d7af4ddcc2fd03aa.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='ActionFeedbackUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="'Raison de la réclamation'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="HardwareEvents" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Text="[in_reclamation]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="688, 542, 745, 176" ElementType="InputBox" FriendlyName="'Raison de la réclamation'" FullSelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='grpCaseComment' /&gt;&lt;wnd ctrlname='txtSacComment' /&gt;&lt;ctrl name='Raison de la réclamation' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tabpBackline' /&gt;&lt;wnd ctrlname='grpCaseComment' /&gt;&lt;wnd ctrlname='txtSacComment' /&gt;&lt;ctrl name='Raison de la réclamation' role='editable text' automationid='' /&gt;" Guid="b0dde30f-1804-4ca6-b6ff-3c14389e84c2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAnQAAACVCAYAAADR7mfBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALtSURBVHhe7daxCYAwAABBB3MRq+Ak1q6RLVNFcIuHO/gd/phz7uu6JEmSFO14nmef57nf95UkSVKwf+ju+94AADQZOgCAOEMHABBn6AAA4gwdAECcoQMAiDN0AABxhg4AIM7QAQDEGToAgDhDBwAQZ+gAAOIMHQBAnKEDAIgzdAAAcYYOACDO0AEAxBk6AIA4QwcAEGfoAADiDB0AQJyhAwCIM3QAAHGGDgAgztABAMQZOgCAOEMHABBn6AAA4gwdAECcoQMAiDN0AABxhg4AIM7QAQDEGToAgDhDBwAQZ+gAAOIMHQBAnKEDAIgzdAAAcYYOACDO0AEAxBk6AIA4QwcAEGfoAADiDB0AQJyhAwCIM3QAAHGGDgAgztABAMQZOgCAOEMHABBn6AAA4gwdAECcoQMAiDN0AABxhg4AIM7QAQDEGToAgDhDBwAQZ+gAAOIMHQBAnKEDAIgzdAAAcYYOACDO0AEAxBk6AIA4QwcAEGfoAADiDB0AQJyhAwCIM3QAAHGGDgAgztABAMQZOgCAOEMHABBn6AAA4gwdAECcoQMAiDN0AABxhg4AIM7QAQDEGToAgDhDBwAQZ+gAAOIMHQBAnKEDAIgzdAAAcYYOACDO0AEAxBk6AIA4QwcAEGfoAADiDB0AQJyhAwCIM3QAAHGGDgAgztABAMQZOgCAOEMHABBn6AAA4gwdAECcoQMAiDN0AABxhg4AIM7QAQDEGToAgDhDBwAQZ+gAAOIMHQBAnKEDAIgzdAAAcYYOACDO0AEAxBk6AIA4QwcAEGfoAADiDB0AQJyhAwCIM3QAAHGGDgAgztABAMQZOgCAOEMHABBn6AAA4gwdAECcoQMAiDN0AABxhg4AIM7QAQDEGToAgDhDBwAQZ+gAAOIMHQBAnKEDAIgzdAAAcYYOACDO0AEAxBk6AIA4QwcAEGfoAADiDB0AQJyhAwCIM3QAAHGGDgAgztABAMQZOgCAuH/oxhh7rSVJkqRca38/C2u5B6X6jwAAAABJRU5ErkJggg==" InformativeScreenshot="bf58e0d7c774336215090797ca8701f9.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_23" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a4f9182f-7c2a-4745-89eb-e2bae59055eb" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="1664, 941, 112, 34" ElementType="Button" FriendlyName="'Sauvegarder'" FullSelectorArgument="&lt;wnd ctrlname='cmdSave' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='cmdSave' check:text='Sauvegarder' /&gt;" Guid="faf58317-fbb1-4ad4-84d0-32e0259670d9" ImageBase64="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" InformativeScreenshot="c280e3e8ca72c0d067d061d4b9bf82d0.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="329, 74, 1263, 873" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPKSURBVFhH7VevayNBFO6fEVsZWVl7snCicRc4UcKpqCOcKKWmhIpSTpQQUUJFYCsCW1FIxMKuWUhEYCMCG3GwERUjKlZUjKh4930zu/nR2zt1m5oOPGZ25s173/vmmwnZk5NDkZMDa9/+v2nE1V/fGHN9qSLnoezpY3x4n0TCsuyo2IKG6ONqBiAgCCDalU0AYH4m+nMOoMipLGOx85YFsGJgtF/sXIZNaiKLNgC0NwAUOZZhAYzVE8Bsk4Ei5zJs1rDJ3wVAiOueJ985gE3q3wXAJvX/BMCHY9mxtjjbfh+o3ml9/f23OcbgXL6X42cfNra9iV0EYN4U015iOEZ2/AvOoyywVnYuQII8WZr5zbD37RwTc160yGuKuIkds8cV3AbAJNyofIlv98W/qsi4eyjxoCaqjzeClbK9KFGTtqQP2btBoK8a2CJJB5kfvtmSAAmeUDGSJ96Z+P0GrClx0JFk1BI92QKAzUiun2NxLw/E+VER57Qi7nlFoi7Wlg4AxhKHPUkVeoA0oAFAzVyTkGDlyRW9HJrvYf9MEq4BkD9oi3NZE+enNYJJA4DYBJB6eJ+1Rc9K01lH4v6BJGQA9CdhW3oXoB+N7JAFDQCRdy1R6BpgbNEjtIPm3LRkeIcfnOfs6DKmkqBdzIAChe5FRXxsUtOe3bBERaGlX81diUbXZhyNEOS+ahiLQ0c6F9YnWYzFRYVs7i0AdOvGOE6mYENDC7B0CpDbGkA1EBfpJvW97xWJJ6D7aSzpwoJJlzhnmH5BAJVINEB1aSIxAvdA79jroa9L5xxMovEIxoOWRA9NcW/qYA/UP9gC4sdmgQYoQpyhCiCUR9xbHAfPXOM42F+fHpngbtfeFr8PGp8tABdV+rdIAiBMZtbvoYE59ADVpwsX4rs2x0HwZEmNAGILAO9mftXQ0sVQhrc4jmUM4TSkAwBM4FzVDNWsRi18aKAHv7rECMhqE88CG96heh4ZCshbPs84CViQFQAPIoQGeP2og+FVFZXUDG2sundxZM6S1DEBdUI1m/NFxUY3ISjFufKOU2SsksDG942VFmg5S4pA1wCqRtXjG2jgvIorc2Qq5QYG57VhUPOAgCmFK8TAuZkzZfLsmVWhXScjuQbMNURMjjm3rQE+m7jXqQdqPFSJZKyUgajYlM4bCQgkn/9jDaazdc5r9ARsYsIY0/hzbQ0AP5V8OjeClG5bAKYQRJFTmbYGgCeVlBQ5lWkfAD4ArADg71H+wOzUkDP7awYAeBwMCDKxC2MuPkhkgH+ROSAa0+/Cslxycii/AZOsOfF0UZQJAAAAAElFTkSuQmCC" InformativeScreenshot="5adff34981be34b62cc1bcae373eb1c5.png" Selector="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SacUi' isremoteapp='1'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;End [ResumePage] ...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>

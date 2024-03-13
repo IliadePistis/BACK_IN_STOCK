@@ -1,0 +1,294 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SellingService" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_sams" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="out_ServiceCheck" Type="OutArgument(x:Int32)" />
+    <x:Property Name="in_OrderValue" Type="InArgument(x:String)" />
+    <x:Property Name="out_CodeErreur" Type="InOutArgument(s:String[])" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1150,2920.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Service_Livraison_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.ConnectionClient</x:String>
+      <x:String>UiPath.ConnectionClient.Contracts</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>ConnectionClient</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SellingService" sap:VirtualizedContainerService.HintSize="768.6666666666666,2856" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="706.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [01-SelligService] ...&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="706.6666666666666,2376" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: iSell" sap:VirtualizedContainerService.HintSize="668,2136.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_sams]" ScopeGuid="636ca15e-8c7c-4277-b5e0-aa3e4a75cc88" Version="V1">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="634,1839.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_ServiceLiv0" />
+                  <Variable x:TypeArguments="sd:DataTable" Name="dt_ServiceLiv1" />
+                  <Variable x:TypeArguments="sd:DataTable" Name="dt_New_BackOrd" />
+                  <Variable x:TypeArguments="sd:DataTable" Name="dt_WithDate" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NClick ClickType="Single" DisplayName="Click 'Service Livraiison'" sap:VirtualizedContainerService.HintSize="572,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="636ca15e-8c7c-4277-b5e0-aa3e4a75cc88" Version="V1">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="712, 107, 176, 26" ElementType="TabPage" FriendlyName="'&amp;2 Service/Livraison'" FullSelectorArgument="&lt;wnd ctrlname='splitMain' /&gt;&lt;wnd ctrlname='MdifGroupBox6' /&gt;&lt;wnd ctrlname='tabMain' /&gt;&lt;ctrl name='Détails commande en cours' role='page tab list' /&gt;&lt;ctrl name='&amp;amp;2 Service/Livraison' role='page tab' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='splitMain' /&gt;&lt;wnd ctrlname='MdifGroupBox6' /&gt;&lt;wnd ctrlname='tabMain' /&gt;&lt;ctrl name='Détails commande en cours' role='page tab list' /&gt;&lt;ctrl name='&amp;amp;2 Service/Livraison' role='page tab' automationid='' check:text='&amp;amp;2 Service/Livraison' /&gt;" Guid="30e770f0-c750-4d69-b9f9-d9ffb907bc2c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALQAAAAeCAYAAACFSjS6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUrSURBVHhe7Zw9TiRLEITX4gR7ATwOgYXHOTgEHAAProEHwoA7IBwugIGEQIDEv4WB1E/fPAXEq82cqX50j5iljNDkZEVmRmVXdRUg8ev29ra7v7/vHh4eGhoWEhcXF93e3l63s7PT/bq+vp44n5+fu/Pz8253d7c7Pj5udrMXxr68vOwODg667e3tzwUNYX9/v1tbW5sQz87OuvX19WY3+9vb4YJmgMXMomZx393dTYKa3ezvbocLmlc3ixoC148hQM6tra0P1ORnHJ7HkSfijoEx+lBCc6SW2xEX1HCGwDzmPhS8J+mVgxXPyo8S9IF2D4txZWXlA34CRHH4de3xOPIMpW0WaBJHGfWi8SFwcnLyMS+3Iy5Ai47XaHwozGPuQ8F7kl45hpqMiumBCX5Hj+Lwa9F7HHnm1eghN3YG5tRnQfvxGo0PhXnMfSh4T0a/cpCDXOUROevh4WccnvsX6SisQd8F3fAnfI2NfuXI8H8XdAY0wxVcv3aw+7M5ur/keB4BjsfXcAT8flLBnbWglZ9Yt2dxyM0n352T6cTO+O53vueKYqfp+QrIM7crRwYmNOSCRjN8wfVrwu7P5uj+kuN5BDgeX8MR8PvPErN6ApSfWLdnccjLJ9+dk+nEzvjud77nimKn6fkKfMOMfuWIQP7Nzc0JyqtIxOEBCyUfjWh1DvD8Wiirq6sf84KDr9ww7nc70wOUs4aT1eK7dOJ3nsM5GT/i+NzhZH2L+lPOSzb+LI9zXIP8Jcf194U0kGeuVw7tJCZTszsZ124WiHVtatbGxsbEFvjz5/Ly8oQvDrZy0wB/O0basIkj3m3lUB7nU5Pa0gHQ5rFZHxgvdZZwDnHEyyYvc6m5xkgD44LrhC+77JXqTsvvftm/f//uPd8auJ65XjlUmAlga1FmiJpObNQUmsWnwMJaWlr6T0O9ceWDj7RhE6e6spVDeZxPTWpLB5A2xUa18Ec6SzhH/cFWT8rFl+WUBsYE1wlfdtkr1Z2W3/2y2TB951sD1zO3Kwc5hzhivNF8V1M4zhgrQa2sce6PONiq5bbncMBhUfDgsB3ezxo97nf01Rnx/VngF+hhlgftzAF/37nUcNzfF9LGvEa/ckRvkYhXItNAHm901hTftRmHcb0p/Q2kca9V1hVcZw0HO6oFMp2OiEMevZXxe58jfqbT/W67fq81rbfur+G4vy/0HNE2+pVDxRCtpkS8EpkG8qjRfM+a4pPMOFr0+P0hadxrlXUF11nDwY5qgUynI+L4JsFPHfU54mc63e+26/da03rr/hqO+/tCzxFto185JHralSCKy45F4Nr45HvJUSx5ZjUOP+PwMn+NnhoOdlQL1PQqm0sff6Yzu3KUfNn4v9L/zN8X0kCt0a8c5GF3IzwCQqI4EMVmfPzO0xuFMeWZFuv8zF+jZxYnqwWiWAex4mR1+/rLGvgYK3U63/0C/CiPx9Zq6wvPM/qVQ8cBuzECmyeKA1FsxsfvPOK0If1IKuNAtoFLf42eWZysFohiHcSKk9Xt6y9r4GOs1Ol89wvwozweW6utLzzPqFcO8vgxlGGIWg0/F6wd1tDoVw6K+DGUYajToOFngrUzlysHG8OPoQxDbJ6Gn4u5XTkaGuaBXleOZjf7u9v+e/GZV45mN/u72/6HqplXjmY3e1Fsrh9/LOinp6fu9fW1oWEhcXV19bmgb25uure3t+79/b2hYSHBv7I7PDz8fEM/Pj52Ly8vDQ0LCX5QPD097Y6Ojv5d0A0Nfweuu38A70WE+0rDE7wAAAAASUVORK5CYII=" InformativeScreenshot="1c480b516e5667763e5129002aa4af7f.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SalesProcessUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_ServiceLiv0]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Désignation du service' ReferenceName='Désignation du service' ReferenceIdx='0'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Date' ReferenceName='Date' ReferenceIdx='1'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Montant' ReferenceName='Montant' ReferenceIdx='2'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Statut' ReferenceName='Statut' ReferenceIdx='3'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Message' ReferenceName='Message' ReferenceIdx='4'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="572,160" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="636ca15e-8c7c-4277-b5e0-aa3e4a75cc88" Version="V1">
+                  <uix:NExtractData.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="552, 169, 1348, 297" ElementType="Table" FriendlyName="'table FlexGrid'" FullSelectorArgument="&lt;wnd ctrlname='splitMain' /&gt;&lt;wnd ctrlname='MdifGroupBox6' /&gt;&lt;wnd ctrlname='tabMain' /&gt;&lt;wnd ctrlname='tpaServiceTransport' /&gt;&lt;wnd ctrlname='MdifGroupBox10' /&gt;&lt;wnd ctrlname='grdServiceTransport' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;" Guid="7e1af587-f581-4f12-8150-3a8e449e043d" InformativeScreenshot="67ea822f537107076c0da5e1b3f0e95e.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SalesProcessUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
+                  </uix:NExtractData.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NExtractData>
+                <Sequence DisplayName="Selling Service" sap:VirtualizedContainerService.HintSize="572,1324" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[dt_ServiceLiv0]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="510,164" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_ServiceLiv1]" SelectColumnsMode="Remove">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["Services"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:FilterDataTable>
+                  <If Condition="[dt_ServiceLiv1.RowCount&gt;0]" DisplayName="Ligne de service" sap:VirtualizedContainerService.HintSize="510,1004" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,585.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LeaveOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Sams\LeaveOrder.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_CodeErreur(0)]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">["WR-AR_NO_SUPPLY_SAD1"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[out_ServiceCheck]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Throw Exception="[new BusinessRuleException(&quot;Il existe au moins un selling service dans la commande. Action requise.&quot;)]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,234.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Pas de ligne de service&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="0, 0, 1920, 1030" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPKSURBVFhH7VevayNBFO6fEVsZWVl7snCicRc4UcKpqCOcKKWmhIpSTpQQUUJFYCsCW1FIxMKuWUhEYCMCG3GwERUjKlZUjKh4930zu/nR2zt1m5oOPGZ25s173/vmmwnZk5NDkZMDa9/+v2nE1V/fGHN9qSLnoezpY3x4n0TCsuyo2IKG6ONqBiAgCCDalU0AYH4m+nMOoMipLGOx85YFsGJgtF/sXIZNaiKLNgC0NwAUOZZhAYzVE8Bsk4Ei5zJs1rDJ3wVAiOueJ985gE3q3wXAJvX/BMCHY9mxtjjbfh+o3ml9/f23OcbgXL6X42cfNra9iV0EYN4U015iOEZ2/AvOoyywVnYuQII8WZr5zbD37RwTc160yGuKuIkds8cV3AbAJNyofIlv98W/qsi4eyjxoCaqjzeClbK9KFGTtqQP2btBoK8a2CJJB5kfvtmSAAmeUDGSJ96Z+P0GrClx0JFk1BI92QKAzUiun2NxLw/E+VER57Qi7nlFoi7Wlg4AxhKHPUkVeoA0oAFAzVyTkGDlyRW9HJrvYf9MEq4BkD9oi3NZE+enNYJJA4DYBJB6eJ+1Rc9K01lH4v6BJGQA9CdhW3oXoB+N7JAFDQCRdy1R6BpgbNEjtIPm3LRkeIcfnOfs6DKmkqBdzIAChe5FRXxsUtOe3bBERaGlX81diUbXZhyNEOS+ahiLQ0c6F9YnWYzFRYVs7i0AdOvGOE6mYENDC7B0CpDbGkA1EBfpJvW97xWJJ6D7aSzpwoJJlzhnmH5BAJVINEB1aSIxAvdA79jroa9L5xxMovEIxoOWRA9NcW/qYA/UP9gC4sdmgQYoQpyhCiCUR9xbHAfPXOM42F+fHpngbtfeFr8PGp8tABdV+rdIAiBMZtbvoYE59ADVpwsX4rs2x0HwZEmNAGILAO9mftXQ0sVQhrc4jmUM4TSkAwBM4FzVDNWsRi18aKAHv7rECMhqE88CG96heh4ZCshbPs84CViQFQAPIoQGeP2og+FVFZXUDG2sundxZM6S1DEBdUI1m/NFxUY3ISjFufKOU2SsksDG942VFmg5S4pA1wCqRtXjG2jgvIorc2Qq5QYG57VhUPOAgCmFK8TAuZkzZfLsmVWhXScjuQbMNURMjjm3rQE+m7jXqQdqPFSJZKyUgajYlM4bCQgkn/9jDaazdc5r9ARsYsIY0/hzbQ0AP5V8OjeClG5bAKYQRJFTmbYGgCeVlBQ5lWkfAD4ArADg71H+wOzUkDP7awYAeBwMCDKxC2MuPkhkgH+ROSAa0+/Cslxycii/AZOsOfF0UZQJAAAAAElFTkSuQmCC" InformativeScreenshot="28d0bde8d0a9496800733d5ac4e1c63a.png" Selector="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='SalesProcessUi' isremoteapp='1'/&gt;" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="672.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Rethrow sap:VirtualizedContainerService.HintSize="334,25.333333333333332" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="706.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;End [01-SelligService] ...&quot;]" />
+  </Sequence>
+</Activity>
