@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property Name="io_Sams" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="out_ExtractDataTable" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_Filtre" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -176,7 +177,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Code raison" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="954,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="f9b3fb2b-3342-49be-8b36-7d7c00eb5b22" Text="Back in stock" Version="V1">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Code raison" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="954,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="f9b3fb2b-3342-49be-8b36-7d7c00eb5b22" Text="[in_filtre]" Version="V1">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="751, 189, 259, 25" ElementType="Cell" FriendlyName="'Column 2 Row 4'" FullSelectorArgument="&lt;wnd ctrlname='SplitContainer1' /&gt;&lt;wnd ctrlname='MdifGroupBox2' /&gt;&lt;wnd ctrlname='grdBusinessEventTypeTag' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row *' role='row' rowName='Code raison' /&gt;&lt;ctrl name='Column 2 Row *' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='SplitContainer1' /&gt;&lt;wnd ctrlname='MdifGroupBox2' /&gt;&lt;wnd ctrlname='grdBusinessEventTypeTag' /&gt;&lt;ctrl name='FlexGrid' role='table' /&gt;&lt;ctrl name='Row *' role='row' rowName='Code raison' /&gt;&lt;ctrl name='Column 2 Row *' role='cell' automationid='' /&gt;" Guid="f29eb997-f131-4d8c-97b7-7b214fe80e59" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQcAAAAdCAYAAACnkanuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADXSURBVHhe7d0xasNAFEVR738XTrAVAmKKFMJp3EWQRkX6QLQBLeEbFUY2eTvQOfCaWcAtpvmHrutqHMeapsnMdr5hGKrv+5rnuQ6ttVqWpQDWQIgD8I84AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4AJE4ANFTHNytMLP7nu5WHI8vdXrr6/zezGznez11WxzWMHx+/9X1ZzGzna9dxi0Oay3Wx6/fMrOd7+P68OcgDmZ23xaHuW4dPAteetoz0QAAAABJRU5ErkJggg==" InformativeScreenshot="774895cf296c40015291cc662f9311e1.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='CustServProcessUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
               </uix:NTypeInto.Target>

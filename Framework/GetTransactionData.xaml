@@ -160,13 +160,25 @@
                       <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="702,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\LiberationDonnes.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="702,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Sams\LiberationDonnes.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_utilisateur">piipa</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_utilisateur">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_utilisateur" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtre">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;FiltreSams&quot;).ToString" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\RecuperationDonnees.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="702,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Sams\RecuperationDonnees.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[in_Sams]</InOutArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ExtractDataTable">[io_dt_TransactionData]</OutArgument>
+                          <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
+                            <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="in_Sams" />
+                          </InOutArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ExtractDataTable">
+                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_dt_TransactionData" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtre">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;FiltreSams&quot;).ToString" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckQueueItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="702,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="CheckQueueItems.xaml">

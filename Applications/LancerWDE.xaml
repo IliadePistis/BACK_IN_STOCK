@@ -228,7 +228,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Workspace" sap:VirtualizedContainerService.HintSize="530,686" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OutUiElement="[out_WDE]" ScopeGuid="f7db9641-ccf3-4165-a60b-67058675c764" Timeout="300" Version="V1">
+                                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Workspace" sap:VirtualizedContainerService.HintSize="530,686" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="Never" OutUiElement="[out_WDE]" ScopeGuid="f7db9641-ccf3-4165-a60b-67058675c764" Timeout="300" Version="V1">
                                     <uix:NApplicationCard.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
