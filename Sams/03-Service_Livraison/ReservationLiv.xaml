@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1952,4154.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1996,5748.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReservationLiv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,14 +108,14 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReservationLiv" sap:VirtualizedContainerService.HintSize="1962,4090" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReservationLiv" sap:VirtualizedContainerService.HintSize="2006,5684" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1900,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [ReservationLiv] ...&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="1900,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1944,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [ReservationLiv] ...&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="1944,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[out_noDate]</OutArgument>
       </Assign.To>
@@ -123,13 +123,13 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="1900,3484.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="Never" ScopeGuid="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: Réservation de service / livraison" sap:VirtualizedContainerService.HintSize="1944,5080" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="Never" ScopeGuid="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1866,3187.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1910,4782.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="DefaultDate" />
               <Variable x:TypeArguments="x:String" Name="NoSupplyMessage" />
@@ -139,9 +139,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Errors (piipa,'" sap:VirtualizedContainerService.HintSize="1804,3071.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="20" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Errors (piipa,'" sap:VirtualizedContainerService.HintSize="1848,4666.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="5" Version="V1">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1411.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1230.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -215,21 +215,6 @@
                       <uix:TargetAnchorable DesignTimeRectangle="1394, 950, 108, 28" ElementType="Button" FriendlyName="'Fermer'" FullSelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Fermer' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Fermer' role='push button' automationid='' check:text='Fermer' /&gt;" Guid="c8b355d0-2e86-457f-b3e0-c78b089988b1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHAAAAAgCAYAAADKbvy8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAVLSURBVGhD7ZhZTJRXFID71rc+tD60Ni4oiCWW1lpkCIsiLmhdakEZFVHZRkVkUcYVBmWLwyAyUBEUlAAOiy0gIJsD2gyKtLaAxa1BcYFGG1sSkramNl/voBKgqK1N7Ez4H76XP+ee82e+ufee87/W09ODhPkiCTRzJIFmjiTQzBlWYGf3ffLPtHOwqkXCxBlWYGtHFytT6pibUMXSA3oJE+a5AsMLWyj4vkfChHmuwMiTV6jv/lPChJEEmjmSQDNHEmjmmJRAfddD9LceUNZyg9yGNo4KsgeQ03yXgiu/UXPnj2HXj0RMS6CQp/+uBNWOABytbbCaZMO4AXy4KpZl2Xf6JA63fiRiWgI776NvPkr45g3YWi9hgd9W5OFRrNnymPXaClR1Yod2PBx2/UjENAXu1OC0KJukc/co7Xo0bKzEYySBZo7ZCdTf6UV/9VsO5eUQIo5V377jNRFFTCFqw08UtHdS2nQWVXo5u9TpRMarCNgmYqLSCVDriFQnEKZS4RuZRIiuiZjsYhJFjELEDDyi9R23KG2sQRWrZkNfjb2CNHbkNZPZ3supdvEOpbVEiJx7+nKmszH+NOltv7zSP51pClRGYz8zFmXeWbT1xg60XdBJYdsDyn+4TUmlllCFJx9MtGGClWhwJk7HRuaDR+pFEqvqOFYUy0xXPxxlbsxznYy19WjesnTgzSkezHKbhv3HFox/3xar1fG4r/BntYiZImImzg9jRlwbx4SEiqZaMtNCmOcg4z1LUcPKlnETXHAJPEhwyTUKzxwhVLkVW5HT3ZjT3pOP5mqJbOxGN+IFKj7D6o3RjLGwZkxfByoTbEYe9wWaZgO7/LwJUqpZr2sltbaNrLICEtNimO2Vwab4z0nJU+E8eT5zVsYTXPgVqfmxrFkuZ4qlJ/LkaqJ1uezTBONo+ynu65IIEzFpIsY3NAEneR4pTZdITj/AFvlKfNNqiCoTNWoNZBVoWB+xn7neh0ktSUYR6M9UkXOFMWfldXIaf6T05u/UjHiBf+tC4wU6ovPK0FZm4CWbhovzQhz9o/AKjcJnoy9Lly1gvOUqFgYoiciIw/4jBcuVX7K/9R7l5405ldjLdhJRcYucbwzk6uJwtRsSYzy6F2hJqj5BhDKQOWJ32y8LZv5GUSM0Ap+AJTg4ezBpqoJwUWN54ICcHf/PXW1Wd6C+vZHcvO24TrBi3KgxvC1259j+OXGqYDGfKMLYkKbBzk0j7jwDx2/eo3pIzpJ2IbBYg6v7MDHiWVKReO63GKvXR/HO+Em821/DyExsnXzEfRnDkqBn39WvCjMUuFcI9GbhWi3b6ls52P+l5pLgGscbKjik0+Ay778KDGGahQL/7NMk9N3DT7nMsYaLFDdkErRNEjiIFwrsuEphZRbeMnfkm9NRXnhESeejJx2j6Dxjy1EfEeuEHKOIlxLYf4SGs9jOEz/ddVLbRY3+7reWnXuKyDylJWCHJHAQLxTY9TNlX9cTo5jBuqDtyFNaSa580sQkRTJbtpt1W2KJEjvI4WUFLsoQMS1oMlSEejmzNKqcrbkDmhi/SGY5q4guUOMtCRzMiwU+pK6zW0g8zu6wtbiNtcHa2OIbx4jpq/FIOs++iiqOCDkzXlpgloi5K+bJc2QXxbDKwQk7C1Hj6Rjhq2VTwSXyGw4TLAkcTP8xVWogMuMi+Zd7qRryw+i7fhXcIOdEMVFiwA4YdpA3iEHeQEp1Jydv91I3JOepjn8Q03Wf8rYL7E8QY8YzB/lnv+erwqQESvx7JIFmjiTQzJEEmjmSQDPnuQK9D4kuS0iUMFWu8BcNzxrg1x0UVQAAAABJRU5ErkJggg==" InformativeScreenshot="d7c52b6216785de5475e60e88d9b3b10.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[(&quot;Erreur Page Reservation Service Livraison&quot;)]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="450,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[out_noDate]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\CancelOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\CancelOrder.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="in_cas">10</InArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
-                  </ui:InvokeWorkflowFile>
                   <Sequence DisplayName="POP UP INFO" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_45">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -307,10 +292,16 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\LeaveOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Sams\LeaveOrder.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <Throw Exception="[new BusinessRuleException(&quot;Erreur Page Reservation Service Livraison&quot;)]" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Throw_7" />
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1238,2850" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1282,4445.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_25">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="aastate_sauv" />
                   </Sequence.Variables>
@@ -319,7 +310,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Articles non'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="1176,54" sap2010:WorkflowViewState.IdRef="NCheckState_10" Timeout="20" Version="V1">
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Articles non'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="1220,794" sap2010:WorkflowViewState.IdRef="NCheckState_10" Timeout="5" Version="V1">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,572.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_32">
                         <sap:WorkflowViewStateService.ViewState>
@@ -378,14 +369,14 @@
                     </uix:NCheckState.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="1176,2642.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="10" Version="V1">
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="1220,3495.3333333333335" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="10" Version="V1">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="588,2381.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="632,3274" sap2010:WorkflowViewState.IdRef="Sequence_38">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="dateRep" />
                         </Sequence.Variables>
@@ -394,7 +385,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NGetAttribute Attribute="aastate" DisplayName="Get Attribute 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="526,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttribute_5" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
+                        <uix:NGetAttribute Attribute="aastate" DisplayName="Get Attribute 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="570,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttribute_5" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
                           <uix:NGetAttribute.Result>
                             <OutArgument x:TypeArguments="x:String">[aastate_sauv]</OutArgument>
                           </uix:NGetAttribute.Result>
@@ -408,7 +399,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NGetAttribute>
-                        <If Condition="[not aastate_sauv=&quot;unavailable&quot;]" sap:VirtualizedContainerService.HintSize="526,2016.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
+                        <If Condition="[not aastate_sauv=&quot;unavailable&quot;]" sap:VirtualizedContainerService.HintSize="570,2906.6666666666665" sap2010:WorkflowViewState.IdRef="If_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -416,19 +407,20 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="476,776.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                            <Sequence sap:VirtualizedContainerService.HintSize="536,1606" sap2010:WorkflowViewState.IdRef="Sequence_52">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\DateChoice.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\DateChoice.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\DateChoice.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="494,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\DateChoice.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <OutArgument x:TypeArguments="x:String" x:Key="out_dateRep">[dateRep]</OutArgument>
                                   <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">[out_noDate]</OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
+                              <uix:NClick ClickType="Single" DisplayName="Click 'Sauvegarder'" sap:VirtualizedContainerService.HintSize="494,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Version="V1">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable DesignTimeRectangle="1523, 954, 91, 20" ElementType="Text" FriendlyName="'Sauvegarder'" FullSelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Sauvegarder' role='push button' /&gt;&lt;ctrl name='Sauvegarder' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Sauvegarder' role='push button' /&gt;&lt;ctrl name='Sauvegarder' role='text' automationid='' check:text='Sauvegarder' /&gt;" Guid="9617653c-5395-49ae-8cb4-bd7ba89e5a20" ImageBase64="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" InformativeScreenshot="d696f5efb223a8c761ab4907aae29710.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
                                 </uix:NClick.Target>
@@ -439,9 +431,9 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </uix:NClick>
-                              <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Donner une raison'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="120" Version="V1">
+                              <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Donner une raison'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,883.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="c4636c00-f82a-412f-9e80-741d3e1c5fa2" Timeout="120" Version="V1">
                                 <uix:NCheckState.IfExists>
-                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,474.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,662" sap2010:WorkflowViewState.IdRef="Sequence_40">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -477,6 +469,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </uix:NClick>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;PARIS&quot;]" />
                                   </Sequence>
                                 </uix:NCheckState.IfExists>
                                 <uix:NCheckState.IfNotExists>
@@ -499,12 +492,12 @@
                                 </uix:NCheckState.Target>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </uix:NCheckState>
-                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign sap:VirtualizedContainerService.HintSize="494,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[NoSupplyMessage]</OutArgument>
                                 </Assign.To>
@@ -512,7 +505,7 @@
                                   <InArgument x:TypeArguments="x:String">[in_NoSupplyMessage+ dateRep]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Internal_message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Sams\Internal_message.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Internal_message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="494,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Sams\Internal_message.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_NewMessage">[NoSupplyMessage]</InArgument>
                                   <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
@@ -527,7 +520,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="492,1056" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                            <Sequence sap:VirtualizedContainerService.HintSize="492,1116.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_55">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -538,7 +531,7 @@
                                   <uix:TargetAnchorable DesignTimeRectangle="1390, 950, 107, 28" ElementType="Button" FriendlyName="'Fermer'" FullSelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Fermer' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='FulfilmentBookingHost' /&gt;&lt;wnd cls='HwndWrapper*' title='FulfilmentBookingHost' /&gt;&lt;ctrl name='FulfilmentBookingHost' role='pane' /&gt;&lt;ctrl name='Fermer' role='push button' automationid='' check:text='Fermer' /&gt;" Guid="c8b355d0-2e86-457f-b3e0-c78b089988b1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHAAAAAgCAYAAADKbvy8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAVLSURBVGhD7ZhZTJRXFID71rc+tD60Ni4oiCWW1lpkCIsiLmhdakEZFVHZRkVkUcYVBmWLwyAyUBEUlAAOiy0gIJsD2gyKtLaAxa1BcYFGG1sSkramNl/voBKgqK1N7Ez4H76XP+ee82e+ufee87/W09ODhPkiCTRzJIFmjiTQzBlWYGf3ffLPtHOwqkXCxBlWYGtHFytT6pibUMXSA3oJE+a5AsMLWyj4vkfChHmuwMiTV6jv/lPChJEEmjmSQDNHEmjmmJRAfddD9LceUNZyg9yGNo4KsgeQ03yXgiu/UXPnj2HXj0RMS6CQp/+uBNWOABytbbCaZMO4AXy4KpZl2Xf6JA63fiRiWgI776NvPkr45g3YWi9hgd9W5OFRrNnymPXaClR1Yod2PBx2/UjENAXu1OC0KJukc/co7Xo0bKzEYySBZo7ZCdTf6UV/9VsO5eUQIo5V377jNRFFTCFqw08UtHdS2nQWVXo5u9TpRMarCNgmYqLSCVDriFQnEKZS4RuZRIiuiZjsYhJFjELEDDyi9R23KG2sQRWrZkNfjb2CNHbkNZPZ3supdvEOpbVEiJx7+nKmszH+NOltv7zSP51pClRGYz8zFmXeWbT1xg60XdBJYdsDyn+4TUmlllCFJx9MtGGClWhwJk7HRuaDR+pFEqvqOFYUy0xXPxxlbsxznYy19WjesnTgzSkezHKbhv3HFox/3xar1fG4r/BntYiZImImzg9jRlwbx4SEiqZaMtNCmOcg4z1LUcPKlnETXHAJPEhwyTUKzxwhVLkVW5HT3ZjT3pOP5mqJbOxGN+IFKj7D6o3RjLGwZkxfByoTbEYe9wWaZgO7/LwJUqpZr2sltbaNrLICEtNimO2Vwab4z0nJU+E8eT5zVsYTXPgVqfmxrFkuZ4qlJ/LkaqJ1uezTBONo+ynu65IIEzFpIsY3NAEneR4pTZdITj/AFvlKfNNqiCoTNWoNZBVoWB+xn7neh0ktSUYR6M9UkXOFMWfldXIaf6T05u/UjHiBf+tC4wU6ovPK0FZm4CWbhovzQhz9o/AKjcJnoy9Lly1gvOUqFgYoiciIw/4jBcuVX7K/9R7l5405ldjLdhJRcYucbwzk6uJwtRsSYzy6F2hJqj5BhDKQOWJ32y8LZv5GUSM0Ap+AJTg4ezBpqoJwUWN54ICcHf/PXW1Wd6C+vZHcvO24TrBi3KgxvC1259j+OXGqYDGfKMLYkKbBzk0j7jwDx2/eo3pIzpJ2IbBYg6v7MDHiWVKReO63GKvXR/HO+Em821/DyExsnXzEfRnDkqBn39WvCjMUuFcI9GbhWi3b6ls52P+l5pLgGscbKjik0+Ay778KDGGahQL/7NMk9N3DT7nMsYaLFDdkErRNEjiIFwrsuEphZRbeMnfkm9NRXnhESeejJx2j6Dxjy1EfEeuEHKOIlxLYf4SGs9jOEz/ddVLbRY3+7reWnXuKyDylJWCHJHAQLxTY9TNlX9cTo5jBuqDtyFNaSa580sQkRTJbtpt1W2KJEjvI4WUFLsoQMS1oMlSEejmzNKqcrbkDmhi/SGY5q4guUOMtCRzMiwU+pK6zW0g8zu6wtbiNtcHa2OIbx4jpq/FIOs++iiqOCDkzXlpgloi5K+bJc2QXxbDKwQk7C1Hj6Rjhq2VTwSXyGw4TLAkcTP8xVWogMuMi+Zd7qRryw+i7fhXcIOdEMVFiwA4YdpA3iEHeQEp1Jydv91I3JOepjn8Q03Wf8rYL7E8QY8YzB/lnv+erwqQESvx7JIFmjiTQzJEEmjmSQDPnuQK9D4kuS0iUMFWu8BcNzxrg1x0UVQAAAABJRU5ErkJggg==" InformativeScreenshot="73090d1948f65a7c8be291823944fd53.png" ScopeSelectorArgument="&lt;wnd app='ikea.sams.app.sams.exe' ctrlname='FulfilmentBookingUi' isremoteapp='1' /&gt;" SearchSteps="Selector" />
                                 </uix:NClick.Target>
                               </uix:NClick>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[(&quot;Erreur Page Reservation Service Livraison&quot;)]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[(&quot;Reservation plage horaire impossible.&quot;)]" />
                               <Assign sap:VirtualizedContainerService.HintSize="450,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[out_noDate]</OutArgument>
@@ -547,7 +540,7 @@
                                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\CancelOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\CancelOrder.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\03-Service_Livraison\CancelOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\CancelOrder.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_cas">10</InArgument>
@@ -618,14 +611,14 @@
                                   <InArgument x:TypeArguments="x:String" xml:space="preserve">WR AR Back in stock  - Traitement de la déviation: annulation-rembou</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Internal_message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Sams\Internal_message.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Internal_message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Sams\Internal_message.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_NewMessage">[NoSupplyMessage]</InArgument>
                                   <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -774,6 +767,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1900,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;End [ReservationLiv] ...&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1944,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;End [ReservationLiv] ...&quot;]" />
   </Sequence>
 </Activity>

@@ -6,7 +6,6 @@
     <x:Property Name="io_WDE" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="in_Order" Type="InArgument(x:String)" />
     <x:Property Name="io_TabLog" Type="InOutArgument(s:String[])" />
-    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -622,18 +621,42 @@
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\02-Service_Livraison\02-DeliveryStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_89" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\02-DeliveryStatus.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[OrderStatus]</OutArgument>
-                                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_ServiceCheck">[ServiceCheck]</OutArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">[OrderValue]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas1">WR AR No Supply - Traitement de la déviation: annulation-rembou</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas3" xml:space="preserve">WR AR No Supply - Traitement de la déviation: annulation-rembou </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas2">WR AR No Supply - Traitement de la déviation: annulation-rembou</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas4" xml:space="preserve">WR AR No Supply - Traitement de la déviation: annulation-rembou </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas5">Aucune ligne de livraison postale au statut NEW ou PARTIAL ou BO.</InArgument>
-                                        <InOutArgument x:TypeArguments="s:String[]" x:Key="io_CodeErreur">[tabCodeErreur]</InOutArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_MsgDev">[MsgDev]</InArgument>
-                                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">[noDate]</OutArgument>
+                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">
+                                          <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="out_Sams" />
+                                        </InOutArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
+                                          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="OrderStatus" />
+                                        </OutArgument>
+                                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_ServiceCheck">
+                                          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="ServiceCheck" />
+                                        </OutArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="OrderValue" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas1">
+                                          <Literal x:TypeArguments="x:String">WR AR No Supply - Traitement de la déviation: annulation-rembou</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas3">
+                                          <Literal x:TypeArguments="x:String" xml:space="preserve">WR AR No Supply - Traitement de la déviation: annulation-rembou </Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas2">
+                                          <Literal x:TypeArguments="x:String">WR AR No Supply - Traitement de la déviation: annulation-rembou</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas4">
+                                          <Literal x:TypeArguments="x:String" xml:space="preserve">WR AR No Supply - Traitement de la déviation: annulation-rembou </Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas5">
+                                          <Literal x:TypeArguments="x:String">Aucune ligne de livraison postale au statut NEW ou PARTIAL ou BO.</Literal>
+                                        </InArgument>
+                                        <InOutArgument x:TypeArguments="s:String[]" x:Key="io_CodeErreur">
+                                          <VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="tabCodeErreur" />
+                                        </InOutArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_MsgDev">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="MsgDev" />
+                                        </InArgument>
+                                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">
+                                          <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="noDate" />
+                                        </OutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1024,42 +1047,18 @@
                                               </sap:WorkflowViewStateService.ViewState>
                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WDETotal.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_97" UnSafe="False" WorkflowFileName="WDE\WDETotal.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Email">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Email" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Phone">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Phone" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_OrderId">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Order" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SAMSId">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SAMSId" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_RefundAmount">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="RefundAmount" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Object">
-                                                    <Literal x:TypeArguments="x:String">IKEA - Suivi de votre commande</Literal>
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS">
-                                                    <Literal x:TypeArguments="x:String">Cher(e) client(e),</Literal>
-                                                  </InArgument>
-                                                  <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_WDE">
-                                                    <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_WDE" />
-                                                  </InOutArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Cher(e) client(e),&quot;+vbCrLf+&quot;Nous les retirons de votre commande &quot; + in_Order +&quot; et nous lançons le remboursement de &quot;+ RefundAmount.split(&quot; &quot;c).first +&quot;€, effectif sous 15 jours et suivant votre mode de paiement initial.&quot;+vbCrLf+&quot;Cordialement,&quot; +vbCrLf+&quot;IKEA&quot;" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS2">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Nous les retirons de votre commande &quot; + in_Order +&quot; et nous lançons le remboursement de &quot;+ RefundAmount.split(&quot; &quot;c).first +&quot;€, effectif sous 15 jours et suivant votre mode de paiement initial &quot;+ RefundAmount.split(&quot; &quot;c).first +&quot;€, effectif sous 15 jours et suivant votre mode de paiement initial.&quot;" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS3">
-                                                    <Literal x:TypeArguments="x:String">Cordialement,</Literal>
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS4">
-                                                    <Literal x:TypeArguments="x:String">IKEA</Literal>
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Email">[Email]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Phone">[Phone]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_OrderId">[in_Order]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SAMSId">[SAMSId]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_RefundAmount">[RefundAmount]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Object">IKEA - Suivi de votre commande</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS">Cher(e) client(e),</InArgument>
+                                                  <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_WDE">[io_WDE]</InOutArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Body">["Cher(e) client(e),"+vbCrLf+"Nous les retirons de votre commande " + in_Order +" et nous lançons le remboursement de "+ RefundAmount.split(" "c).first +"€, effectif sous 15 jours et suivant votre mode de paiement initial."+vbCrLf+"Cordialement," +vbCrLf+"IKEA"]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS2">["Nous les retirons de votre commande " + in_Order +" et nous lançons le remboursement de "+ RefundAmount.split(" "c).first +"€, effectif sous 15 jours et suivant votre mode de paiement initial "+ RefundAmount.split(" "c).first +"€, effectif sous 15 jours et suivant votre mode de paiement initial."]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS3">Cordialement,</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SMS4">IKEA</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
                                             </Sequence>

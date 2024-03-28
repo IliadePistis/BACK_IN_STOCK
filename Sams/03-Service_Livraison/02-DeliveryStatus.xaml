@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1149.3333333333333,4139.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,5151.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Service_Livraison_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -133,22 +133,22 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DeliveryStatus" sap:VirtualizedContainerService.HintSize="742.6666666666666,3994.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DeliveryStatus" sap:VirtualizedContainerService.HintSize="742.6666666666666,5086.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [02-DeliveryStatus] ...&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="680.6666666666666,3514.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="680.6666666666666,4606.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: iSell" sap:VirtualizedContainerService.HintSize="642,3275.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_sams]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_sams]" ScopeGuid="636ca15e-8c7c-4277-b5e0-aa3e4a75cc88" Version="V1">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: iSell" sap:VirtualizedContainerService.HintSize="642,4367.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_sams]" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_sams]" ScopeGuid="636ca15e-8c7c-4277-b5e0-aa3e4a75cc88" Version="V1">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="608,3136" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="608,4228" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_ServiceLiv0" />
                   <Variable x:TypeArguments="sd:DataTable" Name="dt_ServiceLiv1" />
@@ -182,7 +182,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NExtractData>
-                <Sequence DisplayName="Delivery status" sap:VirtualizedContainerService.HintSize="546,2620.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Delivery status" sap:VirtualizedContainerService.HintSize="546,3712.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="dt_Partial" />
                     <Variable x:TypeArguments="x:String" Name="Etat_NOSUPPLY" />
@@ -218,10 +218,10 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <Sequence DisplayName="Filtrage des statuts de livraison" sap:VirtualizedContainerService.HintSize="484,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <Sequence DisplayName="Filtrage des statuts de livraison" sap:VirtualizedContainerService.HintSize="484,688" sap2010:WorkflowViewState.IdRef="Sequence_23">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -357,16 +357,16 @@
                       <InArgument x:TypeArguments="x:String" xml:space="preserve">["WR AR Back in stock - Traitement de la déviation :  L'article est de nouveau en stock, reprogrammation de la livraison au "]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If sap2010:Annotation.AnnotationText="Cas 1 HF: Message deviation vide =&gt; Sauvegarder commande" Condition="[in_MsgDev.trim=&quot;&quot; and dt_New_BackOrd.RowCount = 1 and dt_ServiceLiv0.rowCount = 2]" DisplayName="OK - Case 1" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If sap2010:Annotation.AnnotationText="Cas 1 HF: Message deviation vide =&gt; Sauvegarder commande" Condition="[in_MsgDev.trim=&quot;&quot; or (dt_New_BackOrd.RowCount = 0 and dt_ServiceLiv0.rowCount &gt; 0)]" DisplayName="OK - Case 1" sap:VirtualizedContainerService.HintSize="484,604.6666666666666" sap2010:WorkflowViewState.IdRef="If_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,202.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,390" sap2010:WorkflowViewState.IdRef="Sequence_18">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="NoSupplyMessage" />
                         </Sequence.Variables>
@@ -375,23 +375,16 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Message déviation : &quot;+in_MsgDev]" />
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\02-Service_Livraison\Cas\01_Cas1.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\01_Cas1.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">
-                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
-                            </InOutArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_sams]</InOutArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas1">
                               <Literal x:TypeArguments="x:String" Value="" />
                             </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_raison">
-                              <Literal x:TypeArguments="x:String">Délai resp IKEA</Literal>
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
-                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">
-                              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_noDate" />
-                            </OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_raison">Délai resp IKEA</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">[out_noDate]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -426,18 +419,10 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="02_Cas2.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\02_Cas2.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
-                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
-                            </InOutArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
-                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">
-                              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_noDate" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas2">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="msg" />
-                            </InArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">[out_noDate]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas2">[msg]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -473,21 +458,11 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_Cas3.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\03_Cas3.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
-                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
-                            </InOutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_OrderValue" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
-                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">
-                              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_noDate" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas3">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="msg" />
-                            </InArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_sams]</InOutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">[in_OrderValue]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">[out_noDate]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas3">[msg]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -525,24 +500,12 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="04_Cas4.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\04_Cas4.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">
-                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
-                            </InOutArgument>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_partial">
-                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Partial" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
-                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtWithDate">
-                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_WithDate" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">
-                              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_noDate" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas4">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="msg" />
-                            </InArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_sams]</InOutArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_partial">[dt_Partial]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtWithDate">[dt_WithDate]</InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">[out_noDate]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas4">[msg]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -579,24 +542,12 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="05_Cas5.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\Cas\05_Cas5.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtPartial">
-                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Partial" />
-                            </InArgument>
-                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">
-                              <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_sams" />
-                            </InOutArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">
-                              <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_OrderStatus" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtWithDate">
-                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_WithDate" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">
-                              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_noDate" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas5">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="msg" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtPartial">[dt_Partial]</InArgument>
+                            <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_sams]</InOutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[out_OrderStatus]</OutArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtWithDate">[dt_WithDate]</InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_noDate">[out_noDate]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_NoSupplyMessageCas5">[msg]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
