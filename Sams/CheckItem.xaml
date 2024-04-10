@@ -1,16 +1,16 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="CheckItem" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="out_Sams" Type="OutArgument(ui:UiElement)" />
     <x:Property Name="in_transactionitem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="in_transactionnumber" Type="InArgument(x:Int32)" />
     <x:Property Name="io_WDE" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="in_Order" Type="InArgument(x:String)" />
     <x:Property Name="io_TabLog" Type="InOutArgument(s:String[])" />
+    <x:Property Name="io_Sams" Type="InOutArgument(ui:UiElement)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1992.6666666666667,8516</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1992.6666666666667,8671.333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -123,7 +123,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckItem" sap:VirtualizedContainerService.HintSize="2002.6666666666667,8451.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckItem" sap:VirtualizedContainerService.HintSize="2002.6666666666667,8606.666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CodeErreur" />
       <Variable x:TypeArguments="x:String" Name="LibelleErreur" />
@@ -141,6 +141,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\OpenOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1940.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_99" UnSafe="False" WorkflowFileName="Sams\OpenOrder.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
+          <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="io_Sams" />
+        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Magasin">
+          <Literal x:TypeArguments="x:String">Avignon (018)</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Order">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Order" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1940.6666666666667,54" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start [CheckItem] ...&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -259,7 +272,7 @@
     </ui:MultipleAssign>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1940.6666666666667,7614.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_7">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: iSell" sap:VirtualizedContainerService.HintSize="1902,7352" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[out_Sams]" ScopeGuid="47569408-06ce-45b5-83b7-6bad96e4c1d8" Timeout="300" Version="V1" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Remote Desktop: iSell" sap:VirtualizedContainerService.HintSize="1902,7352" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_Sams]" ScopeGuid="47569408-06ce-45b5-83b7-6bad96e4c1d8" Timeout="300" Version="V1" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -340,7 +353,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LeaveOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="422.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_80" UnSafe="False" WorkflowFileName="Sams\LeaveOrder.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[out_Sams]</InOutArgument>
+                          <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -455,7 +468,7 @@
                             </Delay>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LeaveOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="422.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Sams\LeaveOrder.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[out_Sams]</InOutArgument>
+                                <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -573,7 +586,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\01-Order\StatutDeviation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_86" UnSafe="False" WorkflowFileName="Sams\01-Order\StatutDeviation.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
+                                      <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_Sams]</InOutArgument>
                                       <OutArgument x:TypeArguments="x:String" x:Key="out_MessageDeviation">[MsgDev]</OutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
@@ -586,19 +599,19 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="01-ResumePaiement.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_83" UnSafe="False" WorkflowFileName="Sams\02-ResumePaiement\01-ResumePaiement.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
+                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_Sams]</InOutArgument>
                                         <InOutArgument x:TypeArguments="s:String[]" x:Key="out_CodeErreur">[tabCodeErreur]</InOutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="02-InfoPaiement.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_84" UnSafe="False" WorkflowFileName="Sams\02-ResumePaiement\02-InfoPaiement.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
+                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_Sams]</InOutArgument>
                                         <InOutArgument x:TypeArguments="s:String[]" x:Key="out_CodeErreur">[tabCodeErreur]</InOutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03-ModePaiement.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_85" UnSafe="False" WorkflowFileName="Sams\02-ResumePaiement\03-ModePaiement.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
+                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_Sams]</InOutArgument>
                                         <OutArgument x:TypeArguments="x:String" x:Key="out_MethodPaiement">[MethodPaiement]</OutArgument>
                                         <InOutArgument x:TypeArguments="s:String[]" x:Key="out_CodeErreur">[tabCodeErreur]</InOutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
@@ -613,7 +626,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="01-SellingService.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_87" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\01-SellingService.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
+                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_Sams]</InOutArgument>
                                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_ServiceCheck">[ServiceCheck]</OutArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">[OrderValue]</InArgument>
                                         <InOutArgument x:TypeArguments="s:String[]" x:Key="out_CodeErreur">[tabCodeErreur]</InOutArgument>
@@ -621,7 +634,7 @@
                                     </ui:InvokeWorkflowFile>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\02-Service_Livraison\02-DeliveryStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_89" UnSafe="False" WorkflowFileName="Sams\03-Service_Livraison\02-DeliveryStatus.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
+                                        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_Sams]</InOutArgument>
                                         <OutArgument x:TypeArguments="x:String" x:Key="out_OrderStatus">[OrderStatus]</OutArgument>
                                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_ServiceCheck">[ServiceCheck]</OutArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_OrderValue">[OrderValue]</InArgument>
@@ -767,7 +780,7 @@
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RedSignCheck.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="422.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_90" UnSafe="False" WorkflowFileName="Sams\RedSignCheck.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <OutArgument x:TypeArguments="x:String" x:Key="out_dossierSAMS">[dossierSAMS]</OutArgument>
-                                              <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_Sams">[out_Sams]</OutArgument>
+                                              <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_Sams">[io_Sams]</OutArgument>
                                               <InOutArgument x:TypeArguments="s:Boolean[]" x:Key="io_boolVariableErreur">[boolVariableErreur]</InOutArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
@@ -833,7 +846,7 @@
                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RefundFailed.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_91" UnSafe="False" WorkflowFileName="Sams\RefundFailed.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_TitreEchec">WR AR No Supply - ROBOT Failed</InArgument>
-                                                  <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_SAMS">[out_Sams]</OutArgument>
+                                                  <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_SAMS">[io_Sams]</OutArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -844,7 +857,7 @@
                                               </ui:InvokeWorkflowFile>
                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\ResumePageErreur.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_92" UnSafe="False" WorkflowFileName="Sams\ResumePageErreur.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[out_Sams]</InOutArgument>
+                                                  <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_HFB">9 Service clientèle</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_Origine">61 Client hésitant / indécis</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_Raison">01 Changement d'avis client</InArgument>
@@ -887,7 +900,7 @@
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <OutArgument x:TypeArguments="x:String" x:Key="out_RefundAmount">[RefundAmount]</OutArgument>
                                                     <InArgument x:TypeArguments="x:String" x:Key="in_TotalVSPartial">Total</InArgument>
-                                                    <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_Sams">[out_Sams]</OutArgument>
+                                                    <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_Sams">[io_Sams]</OutArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
                                               </Sequence>
@@ -903,7 +916,7 @@
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <OutArgument x:TypeArguments="x:String" x:Key="out_RefundAmount">[RefundAmount]</OutArgument>
                                                     <InArgument x:TypeArguments="x:String" x:Key="in_TotalVSPartial">Partial</InArgument>
-                                                    <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_Sams">[out_Sams]</OutArgument>
+                                                    <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_Sams">[io_Sams]</OutArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>
                                               </Sequence>
@@ -918,7 +931,7 @@
                                               <OutArgument x:TypeArguments="x:String" x:Key="out_Phone">[Phone]</OutArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_methodePaiem">[MethodPaiement]</InArgument>
                                               <OutArgument x:TypeArguments="x:String" x:Key="out_SAMSId">[SamsID]</OutArgument>
-                                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[out_Sams]</InOutArgument>
+                                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_sams">[io_Sams]</InOutArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_Scenario">8506 : Processus de Vente - Survente</InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_store">Vente à distance (241-STO)</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
@@ -939,7 +952,7 @@
                                           </Assign>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ResumePage.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_96" UnSafe="False" WorkflowFileName="Sams\ResumePage.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[out_Sams]</InOutArgument>
+                                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[io_Sams]</InOutArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_Feedback">[Feedback]</InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_HFB">9 Service clientèle</InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_Origine">65 Réclamation CCD Resp IKEA/Client</InArgument>
