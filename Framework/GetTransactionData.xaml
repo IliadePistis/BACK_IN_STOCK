@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,4694.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,4734.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -171,22 +171,38 @@
                       <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="682,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\LiberationDonnes.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="682,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Sams\LiberationDonnes.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_utilisateur">[in_utilisateur]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtre">[in_Config("FiltreSams").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_utilisateur">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_utilisateur" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtre">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;FiltreSams&quot;).ToString" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\RecuperationDonnees.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="682,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Sams\RecuperationDonnees.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">[in_Sams]</InOutArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ExtractDataTable">[io_dt_TransactionData]</OutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtre">[in_Config("FiltreSams").ToString]</InArgument>
+                          <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Sams">
+                            <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="in_Sams" />
+                          </InOutArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_ExtractDataTable">
+                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_dt_TransactionData" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Filtre">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;FiltreSams&quot;).ToString" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckQueueItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="682,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="CheckQueueItems.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt">[dtQueue]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Folder">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueFolder&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt">
+                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtQueue" />
+                          </OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <If Condition="[io_dt_TransactionData.Rows.Count&gt;0]" sap:VirtualizedContainerService.HintSize="682,1278" sap2010:WorkflowViewState.IdRef="If_6">

@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,1297.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,1337.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,16 +128,28 @@
     </ui:LogMessage>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Applications\LaunchSamsAppl.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Applications\LaunchSamsAppl.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="s:Exception" x:Key="io_SE">[out_SystemException]</InOutArgument>
-        <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_sams">[out_Sams]</OutArgument>
+        <InOutArgument x:TypeArguments="s:Exception" x:Key="io_SE">
+          <VisualBasicReference x:TypeArguments="s:Exception" ExpressionText="out_SystemException" />
+        </InOutArgument>
+        <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_sams">
+          <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="out_Sams" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LancerWDE.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Applications\LancerWDE.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_WDE">[out_WDE]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_User">[in_utilisateur]</InArgument>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_mdp">[in_mdp]</InArgument>
-        <InOutArgument x:TypeArguments="s:Exception" x:Key="io_SE">[out_SystemException]</InOutArgument>
+        <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_WDE">
+          <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="out_WDE" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_User">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_utilisateur" />
+        </InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_mdp">
+          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_mdp" />
+        </InArgument>
+        <InOutArgument x:TypeArguments="s:Exception" x:Key="io_SE">
+          <VisualBasicReference x:TypeArguments="s:Exception" ExpressionText="out_SystemException" />
+        </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sams\001-CheckErrors\Check001.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Sams\001-CheckErrors\Check001.xaml">
